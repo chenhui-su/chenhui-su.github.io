@@ -1,7 +1,11 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 20
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"     # 建议改为 monthly (每月) 或 weekly (每周)
+      day: "sunday"           # 如果是 weekly，指定周日检查
+    open-pull-requests-limit: 5 # 限制同时存在的 PR 数量，保持清爽
+    # 忽略某些经常导致破坏性更新的包（可选）
+    # ignore:
+    #   - dependency-name: "hexo-renderer-marked"
