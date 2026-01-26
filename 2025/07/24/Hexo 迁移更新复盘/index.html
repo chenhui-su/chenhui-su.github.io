@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="Hexo 迁移更新复盘" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.ico">
+    <title>chenhui-su&#39;s Blog | chenhui-su的个人博客</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.ico" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">chenhui-su&#39;s Blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    Hexo 迁移更新复盘
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-07-24</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.6k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：9分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><blockquote>
+<p>想更新 node.js，顺便在迁移了本地博客目录，更新依赖，遇到一些问题，部分是网络波动导致。感觉还是有些价值，令 Gemini 复盘形成文档。 </p>
+</blockquote>
+<h1 id="复盘一：Hexo-本地模块加载失败问题"><a href="#复盘一：Hexo-本地模块加载失败问题" class="headerlink" title="复盘一：Hexo 本地模块加载失败问题"></a>复盘一：Hexo 本地模块加载失败问题</h1><h3 id="1-问题描述-Problem-Description"><a href="#1-问题描述-Problem-Description" class="headerlink" title="1. 问题描述 (Problem Description)"></a>1. 问题描述 (Problem Description)</h3><p>在执行 <code>hexo s</code> 或 <code>hexo d</code> 等命令时，终端报错，提示本地模块加载失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ERROR Cannot find module 'hexo' from 'D:\Hexo-Blog'<br>ERROR Local hexo loading failed in D:\Hexo-Blog<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-诊断过程-Diagnosis-Process"><a href="#2-诊断过程-Diagnosis-Process" class="headerlink" title="2. 诊断过程 (Diagnosis Process)"></a>2. 诊断过程 (Diagnosis Process)</h3><ul>
+<li><strong>初步判断</strong>：用户确认已通过 <code>npm install -g hexo-cli</code> 安装了全局的 Hexo 命令行工具。</li>
+<li><strong>关键分析</strong>：指出全局安装的 <code>hexo-cli</code> 只提供了可在任何路径下执行的 <code>hexo</code> 命令，但每个具体的 Hexo 项目都需要在自己的项目文件夹内拥有一个本地的 <code>hexo</code> 包作为其核心依赖。</li>
+<li><strong>验证</strong>：检查项目文件夹下的 <code>node_modules</code> 目录，发现其不完整或不存在，导致无法找到 <code>hexo</code> 模块。</li>
+</ul>
+<h3 id="3-根本原因-Root-Cause"><a href="#3-根本原因-Root-Cause" class="headerlink" title="3. 根本原因 (Root Cause)"></a>3. 根本原因 (Root Cause)</h3><p>项目的本地依赖没有被正确安装。<code>package.json</code> 文件中虽然定义了项目需要 <code>hexo</code>，但 <code>node_modules</code> 目录中缺少这个包的实际文件。</p>
+<h3 id="4-解决方案-Solution"><a href="#4-解决方案-Solution" class="headerlink" title="4. 解决方案 (Solution)"></a>4. 解决方案 (Solution)</h3><p>在博客项目根目录下，运行标准的 npm 安装命令，以安装 <code>package.json</code> 中定义的所有依赖。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-经验总结-Lessons-Learned"><a href="#5-经验总结-Lessons-Learned" class="headerlink" title="5. 经验总结 (Lessons Learned)"></a>5. 经验总结 (Lessons Learned)</h3><ul>
+<li><strong>区分全局包与本地包</strong>：<code>npm install -g</code> 安装的工具（如 <code>hexo-cli</code>, <code>vue-cli</code>）提供的是全局命令，而项目自身的运行依赖（如 <code>hexo</code>, <code>react</code>）必须作为本地包安装在项目内部。</li>
+<li><strong><code>npm install</code> 的重要性</strong>：在克隆或初始化一个 Node.js 项目后，第一步通常都是运行 <code>npm install</code> 来构建本地依赖环境。</li>
+</ul>
+<hr>
+<h1 id="复盘二：NPM-依赖更新与系统-PATH-环境变量冲突问题"><a href="#复盘二：NPM-依赖更新与系统-PATH-环境变量冲突问题" class="headerlink" title="复盘二：NPM 依赖更新与系统 PATH 环境变量冲突问题"></a>复盘二：NPM 依赖更新与系统 PATH 环境变量冲突问题</h1><h3 id="1-问题描述-Problem-Description-1"><a href="#1-问题描述-Problem-Description-1" class="headerlink" title="1. 问题描述 (Problem Description)"></a>1. 问题描述 (Problem Description)</h3><p>在尝试更新项目过时的依赖时，推荐使用 <code>npm-check-updates</code> 包。但在终端执行其命令 <code>ncu</code> 后，输出的不是预期的依赖检查结果，而是一份关于 NVIDIA CUDA 的帮助文档。</p>
+<h3 id="2-诊断过程-Diagnosis-Process-1"><a href="#2-诊断过程-Diagnosis-Process-1" class="headerlink" title="2. 诊断过程 (Diagnosis Process)"></a>2. 诊断过程 (Diagnosis Process)</h3><ul>
+<li><strong>分析输出</strong>：<code>ncu</code> 命令的输出内容包含大量 <code>CUDA</code>, <code>GPU</code>, <code>NVIDIA Corporation</code> 等关键字，且可执行文件名为 <code>ncu.exe</code>。</li>
+<li><strong>推断原因</strong>：这表明系统中存在另一个名为 <code>ncu.exe</code> 的程序（NVIDIA Nsight Compute），并且其所在目录在系统 <code>PATH</code> 环境变量中的优先级高于 npm 全局包的目录。</li>
+<li><strong>验证</strong>：当用户在终端输入 <code>ncu</code> 时，操作系统根据 <code>PATH</code> 顺序，先找到了 NVIDIA 的程序并执行了它。</li>
+</ul>
+<h3 id="3-根本原因-Root-Cause-1"><a href="#3-根本原因-Root-Cause-1" class="headerlink" title="3. 根本原因 (Root Cause)"></a>3. 根本原因 (Root Cause)</h3><p><strong>PATH 环境变量冲突</strong>。两个不同的程序使用了相同的命令别名 (<code>ncu</code>)，而操作系统优先执行了非预期的那一个。</p>
+<h3 id="4-解决方案-Solution-1"><a href="#4-解决方案-Solution-1" class="headerlink" title="4. 解决方案 (Solution)"></a>4. 解决方案 (Solution)</h3><ul>
+<li><p><strong>临时解决方案 (推荐)</strong>：使用 <code>npx</code> 来执行命令。<code>npx</code> 可以确保运行的是 npm 仓库中或本地 <code>node_modules</code> 中的包，从而绕过系统 PATH 冲突。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 检查更新</span><br>npx ncu<br><span class="hljs-comment"># 写入更新</span><br>npx ncu -u<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>永久解决方案</strong>：手动调整系统环境变量，将 npm 全局目录的路径 (<code>npm config get prefix</code> 可查看) 移动到 NVIDIA 工具目录之前。</p>
+</li>
+</ul>
+<h3 id="5-经验总结-Lessons-Learned-1"><a href="#5-经验总结-Lessons-Learned-1" class="headerlink" title="5. 经验总结 (Lessons Learned)"></a>5. 经验总结 (Lessons Learned)</h3><ul>
+<li><strong><code>npx</code> 的妙用</strong>：<code>npx</code> 是解决命令冲突和避免全局安装包污染的绝佳工具，它允许你直接运行包而无需全局安装。</li>
+<li><strong>警惕 <code>PATH</code> 冲突</strong>：当一个常用命令表现出异常行为时，应考虑到 <code>PATH</code> 冲突的可能性，特别是当系统中安装了多种开发工具集（如 Node.js, Python, NVIDIA CUDA Toolkit 等）时。</li>
+</ul>
+<hr>
+<h1 id="复盘三：NPM-安全漏洞与已弃用包处理"><a href="#复盘三：NPM-安全漏洞与已弃用包处理" class="headerlink" title="复盘三：NPM 安全漏洞与已弃用包处理"></a>复盘三：NPM 安全漏洞与已弃用包处理</h1><h3 id="1-问题描述-Problem-Description-2"><a href="#1-问题描述-Problem-Description-2" class="headerlink" title="1. 问题描述 (Problem Description)"></a>1. 问题描述 (Problem Description)</h3><p>在运行 <code>npm install</code> 或 <code>npm audit</code> 后，报告存在多个安全漏洞 (<code>vulnerabilities</code>) 和已弃用包 (<code>deprecated</code>) 的警告。直接运行 <code>npm audit fix</code> 无法修复所有漏洞。</p>
+<h3 id="2-诊断过程-Diagnosis-Process-2"><a href="#2-诊断过程-Diagnosis-Process-2" class="headerlink" title="2. 诊断过程 (Diagnosis Process)"></a>2. 诊断过程 (Diagnosis Process)</h3><ul>
+<li><strong>分析 <code>npm audit</code> 报告</strong>：报告指出，剩余的漏洞修复需要执行“破坏性变更 (breaking change)”，并将问题根源指向一个核心的旧包 <code>hexo-renderer-kramed</code>。</li>
+<li><strong>分析 <code>deprecated</code> 警告</strong>：警告信息明确提示某些包（如 <code>hexo-renderer-jade</code>）已被其作者弃用，并建议使用新的替代品（如 <code>hexo-renderer-pug</code>）。</li>
+<li><strong>关联分析</strong>：发现未修复的漏洞和已弃用的警告，大多都与几个核心的、长期未更新的 Hexo 插件有关。</li>
+</ul>
+<h3 id="3-根本原因-Root-Cause-2"><a href="#3-根本原因-Root-Cause-2" class="headerlink" title="3. 根本原因 (Root Cause)"></a>3. 根本原因 (Root Cause)</h3><p>项目依赖了一些已经过时、不再维护的 npm 包。这些旧包自身或其依赖项存在已知的安全漏洞，并且没有提供向后兼容的安全更新。</p>
+<h3 id="4-解决方案-Solution-2"><a href="#4-解决方案-Solution-2" class="headerlink" title="4. 解决方案 (Solution)"></a>4. 解决方案 (Solution)</h3><p>采取**“替换”策略**，而非“强制修复”。</p>
+<ol>
+<li>识别出问题的核心旧包（例如 <code>hexo-renderer-kramed</code>, <code>hexo-renderer-jade</code>）。</li>
+<li>寻找它们的现代化替代品（例如 <code>hexo-renderer-marked</code>, <code>hexo-renderer-pug</code>）。</li>
+<li>手动执行卸载和安装操作。</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 示例：替换 kramed 渲染器</span><br>npm uninstall hexo-renderer-kramed<br>npm install hexo-renderer-marked<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-经验总结-Lessons-Learned-2"><a href="#5-经验总结-Lessons-Learned-2" class="headerlink" title="5. 经验总结 (Lessons Learned)"></a>5. 经验总结 (Lessons Learned)</h3><ul>
+<li><strong>理性看待 <code>npm audit fix</code></strong>：它是一个很好的工具，但不是万能的。对于需要“破坏性变更”才能修复的漏洞，应谨慎操作。</li>
+<li><strong>优先替换核心依赖</strong>：当漏洞的根源是一个不再维护的包时，最佳实践是寻找一个活跃的替代品来替换它，而不是在旧的生态上打补丁。这能从根本上提升项目的健康度和安全性。</li>
+<li><strong>关注 <code>deprecated</code> 警告</strong>：这些警告是重要的迁移信号，及时处理可以避免未来出现更严重的问题。</li>
+</ul>
+<hr>
+<h1 id="复盘四：Hexo-Git-部署连接与权限问题"><a href="#复盘四：Hexo-Git-部署连接与权限问题" class="headerlink" title="复盘四：Hexo Git 部署连接与权限问题"></a>复盘四：Hexo Git 部署连接与权限问题</h1><h3 id="1-问题描述-Problem-Description-3"><a href="#1-问题描述-Problem-Description-3" class="headerlink" title="1. 问题描述 (Problem Description)"></a>1. 问题描述 (Problem Description)</h3><p>在执行 <code>hexo d</code> 进行部署时，遇到一系列 Git 连接失败的错误。</p>
+<ol>
+<li><code>Connection reset by ... port 443</code> (HTTPS 连接被重置)</li>
+<li><code>Bad owner or permissions on ... .ssh/config</code> (SSH 配置文件权限错误)</li>
+<li><code>Connection reset by ... port 22</code> (SSH 连接被重置)</li>
+</ol>
+<h3 id="2-诊断过程-Diagnosis-Process-3"><a href="#2-诊断过程-Diagnosis-Process-3" class="headerlink" title="2. 诊断过程 (Diagnosis Process)"></a>2. 诊断过程 (Diagnosis Process)</h3><ul>
+<li><strong>问题1 (HTTPS)</strong>：分析 <code>port 443</code> 指出问题出在 HTTPS 协议上，这通常是网络环境或 TLS/SSL 协议层面的问题，而非简单的认证失败。</li>
+<li><strong>问题2 (SSH 权限)</strong>：错误信息明确指向 Windows 系统下 <code>.ssh/config</code> 文件的权限过于开放 (<code>Everyone</code> 组可访问)，不符合 SSH 客户端的安全要求。</li>
+<li><strong>问题3 (SSH 连接)</strong>：在修复权限后，<code>port 22</code> 的连接重置错误表明问题转向了网络层面，如防火墙阻止了 22 端口的通信。</li>
+</ul>
+<h3 id="3-根本原因-Root-Cause-3"><a href="#3-根本原因-Root-Cause-3" class="headerlink" title="3. 根本原因 (Root Cause)"></a>3. 根本原因 (Root Cause)</h3><p>这是一个复合型问题，包含了三个不同层面的原因：</p>
+<ol>
+<li><strong>HTTPS 问题</strong>：本地环境与 GitHub 服务器的 HTTPS 安全连接不稳定。</li>
+<li><strong>文件权限问题</strong>：Windows 系统下的 SSH 配置文件权限不正确，未满足 SSH 客户端的严格安全标准。</li>
+<li><strong>网络问题</strong>：本地网络环境（如防火墙）可能限制或中断了 SSH (port 22) 的出站连接。</li>
+</ol>
+<h3 id="4-解决方案-Solution-3"><a href="#4-解决方案-Solution-3" class="headerlink" title="4. 解决方案 (Solution)"></a>4. 解决方案 (Solution)</h3><ul>
+<li><p><strong>针对问题1 (HTTPS)</strong>：推荐将部署方式从 HTTPS 切换到 SSH，因为它在自动化推送场景下更稳定。在 <code>_config.yml</code> 中修改 <code>repo</code> URL。</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">- repo: [https://github.com/YourName/YourRepo.git](https://github.com/YourName/YourRepo.git)</span><br><span class="hljs-addition">+ repo: git@github.com:YourName/YourRepo.git</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>针对问题2 (SSH 权限)</strong>：在 Windows 上，通过文件资源管理器的“属性 &gt; 安全 &gt; 高级”界面，<strong>禁用权限继承</strong>，并移除除当前用户外的所有访问权限，确保只有当前用户拥有“完全控制”权限。</p>
+</li>
+<li><p><strong>针对问题3 (SSH 连接)</strong>：这是一个外部环境问题，需要检查本地防火墙、杀毒软件或网络运营商的策略。</p>
+</li>
+</ul>
+<h3 id="5-经验总结-Lessons-Learned-3"><a href="#5-经验总结-Lessons-Learned-3" class="headerlink" title="5. 经验总结 (Lessons Learned)"></a>5. 经验总结 (Lessons Learned)</h3><ul>
+<li><strong>SSH 优先</strong>：对于 Git 的 <code>push</code> 操作，尤其是在 CI/CD 或脚本化部署中，SSH 协议通常是比 HTTPS 更可靠的选择。</li>
+<li><strong>SSH 客户端的跨平台一致性</strong>：无论是 Windows 还是 Linux，SSH 客户端都对 <code>~/.ssh</code> 目录下的文件权限有严格要求，这是保障安全性的核心特性。</li>
+<li><strong>分层排查问题</strong>：遇到连接失败时，要区分是<strong>应用层</strong>（认证错误）、<strong>协议层</strong>（权限/配置错误）还是<strong>网络层</strong>（端口/防火墙问题）的故障，逐一排查。</li>
+</ul>
+<hr>
+<h3 id="复盘五：Git-跨平台换行符（LF-CRLF）警告问题"><a href="#复盘五：Git-跨平台换行符（LF-CRLF）警告问题" class="headerlink" title="复盘五：Git 跨平台换行符（LF/CRLF）警告问题"></a>复盘五：Git 跨平台换行符（LF/CRLF）警告问题</h3><h3 id="1-问题描述-Problem-Description-4"><a href="#1-问题描述-Problem-Description-4" class="headerlink" title="1. 问题描述 (Problem Description)"></a>1. 问题描述 (Problem Description)</h3><p>在执行 <code>git</code> 相关操作（特别是 <code>git add</code>）时，终端输出大量警告信息，格式如下：<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">warning: in the working copy of '...', LF will be replaced by CRLF the next time Git touches it<br></code></pre></td></tr></table></figure></p>
+<h3 id="2-诊断过程-Diagnosis-Process-4"><a href="#2-诊断过程-Diagnosis-Process-4" class="headerlink" title="2. 诊断过程 (Diagnosis Process)"></a>2. 诊断过程 (Diagnosis Process)</h3><ul>
+<li><strong>分析警告内容</strong>：警告明确指出 Git 将在下次接触文件时，把 <code>LF</code> (Line Feed) 换行符替换为 <code>CRLF</code> (Carriage Return + Line Feed)。</li>
+<li><strong>关联操作系统</strong>：这个问题通常发生在 Windows 系统上，因为 Windows 默认使用 <code>CRLF</code> 作为换行符，而 Linux/macOS 使用 <code>LF</code>。</li>
+</ul>
+<h3 id="3-根本原因-Root-Cause-4"><a href="#3-根本原因-Root-Cause-4" class="headerlink" title="3. 根本原因 (Root Cause)"></a>3. 根本原因 (Root Cause)</h3><p>Git 的 <code>core.autocrlf</code> 配置项被激活（在 Windows 上安装 Git 时通常是默认设置）。此功能旨在自动处理跨平台的换行符差异：检出（checkout）到本地时将 <code>LF</code> 转为 <code>CRLF</code>，提交（commit）到仓库时将 <code>CRLF</code> 转回 <code>LF</code>。这个转换过程触发了警告。</p>
+<h3 id="4-解决方案-Solution-4"><a href="#4-解决方案-Solution-4" class="headerlink" title="4. 解决方案 (Solution)"></a>4. 解决方案 (Solution)</h3><p>通过在项目根目录创建 <code>.gitattributes</code> 文件，来精确地、显式地管理项目中不同类型文件的换行符行为，从而取代 Git 的自动猜测。</p>
+<ol>
+<li>在项目根目录创建 <code>.gitattributes</code> 文件。</li>
+<li>填入推荐的配置，为文本文件强制指定 <code>LF</code>，并标记二进制文件。</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 默认行为<br>* text=auto<br><br># 强制文本文件使用 LF<br>*.html text eol=lf<br>*.css text eol=lf<br>*.js text eol=lf<br>*.json text eol=lf<br>*.yml text eol=lf<br>*.md text eol=lf<br>  <br># 标记二进制文件，防止 Git 修改它们<br>*.png binary<br>*.jpg binary<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>将 <code>.gitattributes</code> 文件提交到仓库中。</li>
+</ol>
+<h3 id="5-经验总结-Lessons-Learned-4"><a href="#5-经验总结-Lessons-Learned-4" class="headerlink" title="5. 经验总结 (Lessons Learned)"></a>5. 经验总结 (Lessons Learned)</h3><ul>
+<li><strong><code>.gitattributes</code> 的重要性</strong>：对于任何跨平台协作的项目，在项目初期就配置好 <code>.gitattributes</code> 文件是保证代码风格一致、避免换行符混乱的最佳实践。</li>
+<li><strong>显式优于隐式</strong>：与其依赖 Git 的 <code>autocrlf</code> 自动转换功能，不如通过 <code>.gitattributes</code> 文件明确定义规则。这让项目行为更可预测，并能从根本上消除相关警告。</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-07-24</span>
+            
+                <span>该篇文章被 chenhui-su</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E5%8D%9A%E5%AE%A2/'>
+                            博客
+                        </a>
+                    
+                        <a href='/tags/Git/'>
+                            Git
+                        </a>
+                    
+                        <a href='/tags/Windows/'>
+                            Windows
+                        </a>
+                    
+                        <a href='/tags/Hexo/'>
+                            Hexo
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E5%AD%98%E6%A1%A3/'>
+                            存档
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2025/07/27/2025%20%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/'>2025 半年总结</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/24/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5%EF%BC%88Residual%20Connection%EF%BC%89%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/">残差连接（Residual Connection）核心概念解析</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2025 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

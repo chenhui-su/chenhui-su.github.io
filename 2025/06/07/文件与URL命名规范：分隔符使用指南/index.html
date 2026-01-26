@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="文件与URL命名规范：分隔符使用指南" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.ico">
+    <title>chenhui-su&#39;s Blog | chenhui-su的个人博客</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.ico" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">chenhui-su&#39;s Blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    文件与URL命名规范：分隔符使用指南
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-06-07</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：4分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="文件与URL命名规范：分隔符使用指南"><a href="#文件与URL命名规范：分隔符使用指南" class="headerlink" title="文件与URL命名规范：分隔符使用指南"></a>文件与URL命名规范：分隔符使用指南</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在数字化工作中，无论是个人文件管理、团队项目协作，还是网站开发，采用一套统一、清晰的命名规范至关重要。良好的命名规范能极大提升信息的可读性、可维护性和可检索性。</p>
+<p>本文档旨在提供一套关于分隔符（主要是下划线 <code>_</code> 与连字符 <code>-</code>）使用的完整指南，并重点介绍一套适用于文件和文件夹命名的双层分隔符系统。</p>
+<hr>
+<h2 id="Part-1：通用分隔符泛用性对比-vs"><a href="#Part-1：通用分隔符泛用性对比-vs" class="headerlink" title="Part 1：通用分隔符泛用性对比 (_ vs. -)"></a>Part 1：通用分隔符泛用性对比 (<code>_</code> vs. <code>-</code>)</h2><p>下划线 (<code>_</code>) 和连字符 (<code>-</code>) 是最常用的两种分隔符，但它们的“泛用性”完全取决于应用场景。简单来说，连字符更适合面向公众和网络，而下划线更适合技术性、内部使用的场景。</p>
+<h3 id="各场景推荐与原因"><a href="#各场景推荐与原因" class="headerlink" title="各场景推荐与原因"></a>各场景推荐与原因</h3><table>
+<thead>
+<tr>
+<th align="left">场景 (Use Case)</th>
+<th align="left">推荐分隔符</th>
+<th align="left">主要原因</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">URL 网址</td>
+<td align="left"><code>-</code> (连字符)</td>
+<td align="left">SEO 友好。Google 等搜索引擎将连字符视为单词分隔符（如 <code>my-page</code> 被理解为 <code>my page</code>），而下划线被视为单词连接符（<code>my_page</code> 被理解为 <code>mypage</code>），前者对搜索排名更有利。</td>
+</tr>
+<tr>
+<td align="left">文件名 (Filename)</td>
+<td align="left"><code>_</code> (下划线)</td>
+<td align="left">易用性与兼容性。在图形界面或命令行中，双击带下划线的文件名（<code>file_name.txt</code>）通常能选中整个名称，而带连字符的（<code>file-name.txt</code>）可能只选中一部分。</td>
+</tr>
+<tr>
+<td align="left">编程 (Programming)</td>
+<td align="left">取决于语言规范</td>
+<td align="left">- Python: 强制推荐下划线 <code>snake_case</code> (e.g., <code>my_variable</code>)。<br>- CSS: 普遍使用连字符 <code>kebab-case</code> (e.g., <code>.my-class</code>)。<br>- JavaScript/Java: 多用 <code>camelCase</code>，不直接使用分隔符。</td>
+</tr>
+<tr>
+<td align="left">数据库 (Database)</td>
+<td align="left"><code>_</code> (下划线)</td>
+<td align="left">可读性与安全性。<code>snake_case</code> 是绝大多数数据库设计的标准实践。连字符在某些 SQL 环境中可能被视为非法字符或需要特殊处理，容易出错。</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Part-2：最佳实践：双层分隔符文件命名系统"><a href="#Part-2：最佳实践：双层分隔符文件命名系统" class="headerlink" title="Part 2：最佳实践：双层分隔符文件命名系统"></a>Part 2：最佳实践：双层分隔符文件命名系统</h2><p>对于需要结构化管理的文件和文件夹，我们推荐使用一套分级、双层的分隔符系统。这套系统能最大化提升文件命名的清晰度和机器可读性。</p>
+<h3 id="核心原则"><a href="#核心原则" class="headerlink" title="核心原则"></a>核心原则</h3><ol>
+<li><p>主分隔符 (Major Separator): <code>_</code> (下划线)</p>
+<ul>
+<li>用途：用于分隔文件名中不同的功能区块（元数据字段）。它像一个“宏观”分隔符，用来划分文件名的主要组成部分。</li>
+<li>示例：在 <code>日期</code>、<code>项目名</code>、<code>文件描述</code> 等核心区块之间使用。</li>
+</ul>
+</li>
+<li><p>次分隔符 (Minor Separator): <code>-</code> (连字符)</p>
+<ul>
+<li>用途：用于连接一个功能区块内部的多个单词，使其形成一个逻辑上统一的短语。</li>
+<li>示例：项目名称为 “Project Phoenix”，在文件名中应表示为 <code>project-phoenix</code>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="标准命名模板与示例"><a href="#标准命名模板与示例" class="headerlink" title="标准命名模板与示例"></a>标准命名模板与示例</h3><p>一个健壮且通用的文件名模板如下：</p>
+<p>模板: <code>[日期]_[项目或类别]_[文件描述]_[版本号].[后缀]</code></p>
+<p>实际应用示例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">20250606_project-phoenix_marketing-launch-plan_v1.2.docx<br></code></pre></td></tr></table></figure>
+
+<p>文件名结构解析:</p>
+<ul>
+<li><code>20250606</code>: 日期区块。使用 <code>YYYYMMDD</code> 格式确保文件能按时间正确排序。</li>
+<li><code>_</code>: 主分隔符。分隔「日期」与「项目名」。</li>
+<li><code>project-phoenix</code>: 项目区块。内部使用 <code>-</code> 将单词连接成一个完整的项目名。</li>
+<li><code>_</code>: 主分隔符。分隔「项目名」与「文件描述」。</li>
+<li><code>marketing-launch-plan</code>: 文件描述区块。内部使用 <code>-</code> 连接多个单词，形成清晰的描述短语。</li>
+<li><code>_</code>: 主分隔符。分隔「文件描述」与「版本号」。</li>
+<li><code>v1.2</code>: 版本号区块。<code>v</code> 是 “version” 的缩写。</li>
+<li><code>.docx</code>: 文件扩展名。</li>
+</ul>
+<h3 id="双层分隔系统的优势"><a href="#双层分隔系统的优势" class="headerlink" title="双层分隔系统的优势"></a>双层分隔系统的优势</h3><ul>
+<li>结构清晰，可读性高：任何人都能通过分隔符快速理解文件名的结构和含义。<code>_</code> 划分大类，<code>-</code> 连接细节。</li>
+<li>排序与分组能力强：在文件管理器中，文件可以自然地按日期、项目名等区块进行排序和逻辑分组。</li>
+<li>便于脚本自动化处理：结构化的命名使得编写脚本（如 Python, Shell）进行批量重命名、归档、数据提取等操作变得异常简单。</li>
+<li>跨平台兼容性：此命名法在 Windows, macOS, Linux 等所有主流操作系统中都表现完美，不会产生兼容性问题。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>在需要单一分隔符的场景下，根据具体用途（Web 或本地）选择 <code>-</code> 或 <code>_</code>。</li>
+<li>在需要结构化命名的文件管理场景中，强烈推荐采用 <code>_</code> 作为主分隔符、<code>-</code> 作为次分隔符的双层系统，它将为你的数字资产管理带来长期的便利和清晰度。</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-06-07</span>
+            
+                <span>该篇文章被 chenhui-su</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E8%A7%84%E8%8C%83/'>
+                            规范
+                        </a>
+                    
+                        <a href='/tags/%E5%88%86%E9%9A%94%E7%AC%A6/'>
+                            分隔符
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E8%A7%84%E8%8C%83/'>
+                            规范
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2025/07/13/Git%20%E5%9C%A8%20Windows%20%E4%B8%8A%E5%A4%A7%E5%B0%8F%E5%86%99%E4%B8%8D%E6%95%8F%E6%84%9F/'>Git 在 Windows 上大小写不敏感</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/06/04/%E4%B8%AA%E4%BA%BA%E5%BC%80%E5%8F%91-Git-%E8%A7%84%E8%8C%83/">个人开发 Git 规范</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2025 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

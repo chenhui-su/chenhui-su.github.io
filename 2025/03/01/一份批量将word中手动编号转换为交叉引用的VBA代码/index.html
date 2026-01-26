@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="一份批量将word中手动编号转换为交叉引用的VBA代码" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.ico">
+    <title>chenhui-su&#39;s Blog | chenhui-su的个人博客</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.ico" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">chenhui-su&#39;s Blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    一份批量将word中手动编号转换为交叉引用的VBA代码
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-03-01</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：9分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="添加图表交叉引用的-VBA-脚本"><a href="#添加图表交叉引用的-VBA-脚本" class="headerlink" title="添加图表交叉引用的 VBA 脚本"></a>添加图表交叉引用的 VBA 脚本</h1><h2 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h2><p>此VBA宏用于将Word文档中的纯文本图表编号转换为Word自动题注和交叉引用系统，实现以下功能：</p>
+<ol>
+<li>将格式为”图x-x 描述”的纯文本图题转换为Word自动题注</li>
+<li>将格式为”图x-x所示”的文本引用转换为交叉引用链接</li>
+<li>保持章节-序号的编号格式</li>
+<li>在生成的题注后添加原有的描述文本</li>
+</ol>
+<h2 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h2><ul>
+<li>文档中的图题必须遵循”图x-x 描述”的格式（如”图2-1 系统架构图”）</li>
+<li>文本引用必须遵循”图x-x所示”的格式（如”如图2-1所示”）</li>
+<li>必须在Word中启用宏</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br></pre></td><td class="code"><pre><code class="hljs vb"><span class="hljs-keyword">Sub</span> 创建图表交叉引用系统()<br>    <span class="hljs-keyword">Dim</span> doc <span class="hljs-keyword">As</span> Document<br>    <span class="hljs-keyword">Dim</span> rng <span class="hljs-keyword">As</span> Range, searchRng <span class="hljs-keyword">As</span> Range<br>    <span class="hljs-keyword">Dim</span> figPattern <span class="hljs-keyword">As</span> <span class="hljs-type">String</span>, refPattern <span class="hljs-keyword">As</span> <span class="hljs-type">String</span><br>    <span class="hljs-keyword">Dim</span> figCount <span class="hljs-keyword">As</span> <span class="hljs-type">Integer</span>, refCount <span class="hljs-keyword">As</span> <span class="hljs-type">Integer</span><br>    <span class="hljs-keyword">Dim</span> captionLabels <span class="hljs-keyword">As</span> <span class="hljs-type">Object</span><br>    <br>    <span class="hljs-comment">' 设置文档对象</span><br>    <span class="hljs-keyword">Set</span> doc = ActiveDocument<br>    <br>    <span class="hljs-comment">' 创建字典对象用于存储图表编号与新编号的映射</span><br>    <span class="hljs-keyword">Set</span> captionLabels = CreateObject(<span class="hljs-string">"Scripting.Dictionary"</span>)<br>    <br>    <span class="hljs-comment">' 初始化计数器</span><br>    figCount = <span class="hljs-number">0</span><br>    refCount = <span class="hljs-number">0</span><br>    <br>    <span class="hljs-comment">' 添加"图"标签，如果尚未存在</span><br>    <span class="hljs-keyword">On</span> <span class="hljs-keyword">Error</span> <span class="hljs-keyword">Resume</span> <span class="hljs-keyword">Next</span><br>    ActiveDocument.captionLabels.Add <span class="hljs-string">"图"</span><br>    <span class="hljs-keyword">On</span> <span class="hljs-keyword">Error</span> <span class="hljs-keyword">GoTo</span> <span class="hljs-number">0</span><br>    <br>    <span class="hljs-comment">' =============== 第一部分：查找图题并创建题注 ===============</span><br>    <span class="hljs-comment">' 设置图题查找模式 - 查找"图x-x 描述"格式</span><br>    figPattern = <span class="hljs-string">"图[0-9]-[0-9] *"</span><br>    <br>    <span class="hljs-comment">' 创建一个范围包含整个文档</span><br>    <span class="hljs-keyword">Set</span> rng = doc.Range<br>    <br>    <span class="hljs-comment">' 开始查找图题并创建题注</span><br>    <span class="hljs-keyword">With</span> rng.Find<br>        .ClearFormatting<br>        .<span class="hljs-keyword">Text</span> = figPattern<br>        .Replacement.ClearFormatting<br>        .Replacement.<span class="hljs-keyword">Text</span> = <span class="hljs-string">""</span><br>        .Forward = <span class="hljs-literal">True</span><br>        .Wrap = wdFindStop<br>        .Format = <span class="hljs-literal">False</span><br>        .MatchCase = <span class="hljs-literal">False</span><br>        .MatchWholeWord = <span class="hljs-literal">False</span><br>        .MatchWildcards = <span class="hljs-literal">True</span><br>        <br>        <span class="hljs-comment">' 查找图题</span><br>        <span class="hljs-keyword">Do</span> <span class="hljs-keyword">While</span> .Execute<br>            figCount = figCount + <span class="hljs-number">1</span><br>            <br>            <span class="hljs-comment">' 提取当前图表编号 (图x-x)</span><br>            <span class="hljs-keyword">Dim</span> figText <span class="hljs-keyword">As</span> <span class="hljs-type">String</span>, figNum <span class="hljs-keyword">As</span> <span class="hljs-type">String</span><br>            figText = rng.<span class="hljs-keyword">Text</span><br>            <br>            <span class="hljs-comment">' 确保提取正确的图号部分（如"图2-1"）</span><br>            <span class="hljs-keyword">Dim</span> spacePos <span class="hljs-keyword">As</span> <span class="hljs-type">Integer</span><br>            spacePos = InStr(figText, <span class="hljs-string">" "</span>)<br>            <span class="hljs-keyword">If</span> spacePos &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">Then</span><br>                figNum = Left(figText, spacePos - <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">Else</span><br>                figNum = figText<br>            <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span><br>            <br>            <span class="hljs-comment">' 保存原始图号与序号的映射</span><br>            <span class="hljs-keyword">If</span> <span class="hljs-built_in">Not</span> captionLabels.Exists(figNum) <span class="hljs-keyword">Then</span><br>                captionLabels.Add figNum, figCount<br>            <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span><br>            <br>            <span class="hljs-comment">' 保存当前位置、原始文本和格式</span><br>            <span class="hljs-keyword">Dim</span> origStart <span class="hljs-keyword">As</span> <span class="hljs-type">Long</span>, origEnd <span class="hljs-keyword">As</span> <span class="hljs-type">Long</span>, origText <span class="hljs-keyword">As</span> <span class="hljs-type">String</span><br>            <span class="hljs-keyword">Dim</span> origFontName <span class="hljs-keyword">As</span> <span class="hljs-type">String</span>, origFontSize <span class="hljs-keyword">As</span> <span class="hljs-type">Single</span>, origFontBold <span class="hljs-keyword">As</span> <span class="hljs-type">Boolean</span>, origFontItalic <span class="hljs-keyword">As</span> <span class="hljs-type">Boolean</span><br>            <span class="hljs-keyword">Dim</span> origParaAlignment <span class="hljs-keyword">As</span> <span class="hljs-type">Long</span>, origParaSpaceBefore <span class="hljs-keyword">As</span> <span class="hljs-type">Single</span>, origParaSpaceAfter <span class="hljs-keyword">As</span> <span class="hljs-type">Single</span><br>            <br>            origStart = rng.Start<br>            origEnd = rng.<span class="hljs-keyword">End</span><br>            origText = rng.<span class="hljs-keyword">Text</span><br>            <br>            <span class="hljs-comment">' 保存原始字体格式</span><br>            origFontName = rng.Font.Name<br>            origFontSize = rng.Font.Size<br>            origFontBold = rng.Font.Bold<br>            origFontItalic = rng.Font.Italic<br>            <br>            <span class="hljs-comment">' 保存原始段落格式</span><br>            origParaAlignment = rng.Paragraphs(<span class="hljs-number">1</span>).Alignment<br>            origParaSpaceBefore = rng.Paragraphs(<span class="hljs-number">1</span>).SpaceBefore<br>            origParaSpaceAfter = rng.Paragraphs(<span class="hljs-number">1</span>).SpaceAfter<br>            <br>            <span class="hljs-comment">' 提取描述部分</span><br>            <span class="hljs-keyword">Dim</span> descText <span class="hljs-keyword">As</span> <span class="hljs-type">String</span><br>            <span class="hljs-keyword">If</span> spacePos &gt; <span class="hljs-number">0</span> <span class="hljs-built_in">And</span> spacePos &lt; Len(origText) <span class="hljs-keyword">Then</span><br>                descText = <span class="hljs-keyword">Mid</span>(origText, spacePos + <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">Else</span><br>                descText = <span class="hljs-string">""</span><br>            <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span><br>            <br>            <span class="hljs-comment">' 替换为题注并手动控制空格</span><br>            rng.<span class="hljs-keyword">Text</span> = <span class="hljs-string">""</span><br>            <br>            <span class="hljs-comment">' 插入题注，不使用自动空格</span><br>            rng.InsertCaption Label:=<span class="hljs-string">"图"</span>, Position:=wdCaptionPositionBelow, ExcludeLabel:=<span class="hljs-number">0</span><br>            <br>            <span class="hljs-comment">' 应用原始格式到新插入的内容</span><br>            <span class="hljs-keyword">Dim</span> newRng <span class="hljs-keyword">As</span> Range<br>            <span class="hljs-keyword">Set</span> newRng = doc.Range(origStart, rng.<span class="hljs-keyword">End</span>)<br>            <br>            <span class="hljs-comment">' 应用字体格式</span><br>            newRng.Font.Name = origFontName<br>            newRng.Font.Size = origFontSize<br>            newRng.Font.Bold = origFontBold<br>            newRng.Font.Italic = origFontItalic<br>            <br>            <span class="hljs-comment">' 应用段落格式</span><br>            newRng.Paragraphs(<span class="hljs-number">1</span>).Alignment = origParaAlignment<br>            newRng.Paragraphs(<span class="hljs-number">1</span>).SpaceBefore = origParaSpaceBefore<br>            newRng.Paragraphs(<span class="hljs-number">1</span>).SpaceAfter = origParaSpaceAfter<br>            <br>            <span class="hljs-comment">' 直接查找插入的题注并定位到其末尾</span><br>            <span class="hljs-comment">' 题注会在当前位置生成一个字段</span><br>            <span class="hljs-comment">' 我们需要找到这个位置的最后一个字段</span><br>            <span class="hljs-keyword">Dim</span> fldRng <span class="hljs-keyword">As</span> Range<br>            <span class="hljs-keyword">Set</span> fldRng = doc.Range(rng.Start, rng.Start + <span class="hljs-number">100</span>) <span class="hljs-comment">' 创建一个合理范围查找</span><br>            <br>            <span class="hljs-comment">' 在这个范围内搜索插入的题注字段</span><br>            <span class="hljs-keyword">If</span> fldRng.Fields.Count &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">Then</span><br>                <span class="hljs-comment">' 找到最后插入的字段</span><br>                <span class="hljs-keyword">Dim</span> fld <span class="hljs-keyword">As</span> Field<br>                <span class="hljs-keyword">Set</span> fld = fldRng.Fields(fldRng.Fields.Count)<br>                <br>                <span class="hljs-comment">' 将光标定位到域的结尾</span><br>                rng.Start = fld.Result.<span class="hljs-keyword">End</span><br>                rng.<span class="hljs-keyword">End</span> = fld.Result.<span class="hljs-keyword">End</span><br>            <span class="hljs-keyword">Else</span><br>                <span class="hljs-comment">' 如果找不到字段，使用替代方法</span><br>                <span class="hljs-comment">' 直接尝试找到插入的标题文本的结束位置</span><br>                <span class="hljs-comment">' 标题通常包含"图"和数字</span><br>                <span class="hljs-keyword">Dim</span> captionText <span class="hljs-keyword">As</span> <span class="hljs-type">String</span><br>                captionText = rng.<span class="hljs-keyword">Text</span><br>                <br>                <span class="hljs-comment">' 重新定位到当前文本末尾</span><br>                rng.Start = rng.Start + Len(captionText)<br>                rng.<span class="hljs-keyword">End</span> = rng.Start<br>            <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span><br>            <br>            <span class="hljs-comment">' 在域结束后添加空格和描述</span><br>            rng.InsertAfter <span class="hljs-string">" "</span> &amp; descText<br>            <br>            <span class="hljs-comment">' 设置新的查找范围</span><br>            rng.Start = origStart + Len(rng.<span class="hljs-keyword">Text</span>)<br>            rng.<span class="hljs-keyword">End</span> = doc.Content.<span class="hljs-keyword">End</span><br>        <span class="hljs-keyword">Loop</span><br>    <span class="hljs-keyword">End</span> <span class="hljs-keyword">With</span><br>    <br>    <span class="hljs-comment">' 更新文档中的域</span><br>    doc.Fields.Update<br>    <br>    <span class="hljs-comment">' =============== 第二部分：查找文本引用并替换为交叉引用 ===============</span><br>    <span class="hljs-keyword">If</span> figCount &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">Then</span><br>        <span class="hljs-comment">' 设置引用查找模式 - 扩大匹配范围，查找"图x-x所示"格式</span><br>        refPattern = <span class="hljs-string">"图[0-9]-[0-9]所示"</span><br>        <br>        <span class="hljs-comment">' 重置查找范围为整个文档</span><br>        <span class="hljs-keyword">Set</span> searchRng = doc.Range<br>        <br>        <span class="hljs-comment">' 开始查找引用并替换为交叉引用</span><br>        <span class="hljs-keyword">With</span> searchRng.Find<br>            .ClearFormatting<br>            .<span class="hljs-keyword">Text</span> = refPattern<br>            .Replacement.ClearFormatting<br>            .Replacement.<span class="hljs-keyword">Text</span> = <span class="hljs-string">""</span><br>            .Forward = <span class="hljs-literal">True</span><br>            .Wrap = wdFindStop<br>            .Format = <span class="hljs-literal">False</span><br>            .MatchCase = <span class="hljs-literal">False</span><br>            .MatchWholeWord = <span class="hljs-literal">False</span><br>            .MatchWildcards = <span class="hljs-literal">True</span><br>            <br>            <span class="hljs-comment">' 查找引用</span><br>            <span class="hljs-keyword">Do</span> <span class="hljs-keyword">While</span> .Execute<br>                <span class="hljs-comment">' 提取引用的图表编号</span><br>                <span class="hljs-keyword">Dim</span> refText <span class="hljs-keyword">As</span> <span class="hljs-type">String</span>, refFigNum <span class="hljs-keyword">As</span> <span class="hljs-type">String</span><br>                refText = searchRng.<span class="hljs-keyword">Text</span><br>                <span class="hljs-comment">' 提取数字部分 "x-x"</span><br>                refFigNum = <span class="hljs-keyword">Mid</span>(refText, <span class="hljs-number">2</span>, InStr(refText, <span class="hljs-string">"所示"</span>) - <span class="hljs-number">2</span>)<br>                <br>                <span class="hljs-comment">' 添加"图"前缀以匹配字典键值</span><br>                refFigNum = <span class="hljs-string">"图"</span> &amp; refFigNum<br>                <br>                <span class="hljs-comment">' 检查这个图表编号是否有对应的题注编号</span><br>                <span class="hljs-keyword">If</span> captionLabels.Exists(refFigNum) <span class="hljs-keyword">Then</span><br>                    refCount = refCount + <span class="hljs-number">1</span><br>                    <br>                    <span class="hljs-comment">' 获取对应的题注编号</span><br>                    <span class="hljs-keyword">Dim</span> captionNum <span class="hljs-keyword">As</span> <span class="hljs-type">Integer</span><br>                    captionNum = captionLabels(refFigNum)<br>                    <br>                    <span class="hljs-comment">' 保存原始位置</span><br>                    <span class="hljs-keyword">Dim</span> refOrigStart <span class="hljs-keyword">As</span> <span class="hljs-type">Long</span>, refOrigEnd <span class="hljs-keyword">As</span> <span class="hljs-type">Long</span><br>                    refOrigStart = searchRng.Start<br>                    refOrigEnd = searchRng.<span class="hljs-keyword">End</span><br>                    <br>                    <span class="hljs-comment">' 替换文本</span><br>                    searchRng.<span class="hljs-keyword">Text</span> = <span class="hljs-string">"所示"</span><br>                    <br>                    <span class="hljs-comment">' 定位到插入点</span><br>                    searchRng.Start = refOrigStart<br>                    searchRng.<span class="hljs-keyword">End</span> = searchRng.Start<br>                    <br>                    <span class="hljs-comment">' 插入交叉引用</span><br>                    searchRng.InsertCrossReference ReferenceType:=<span class="hljs-string">"图"</span>, ReferenceKind:=wdOnlyLabelAndNumber, _<br>                        ReferenceItem:=captionNum, InsertAsHyperlink:=<span class="hljs-literal">True</span><br>                <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span><br>                <br>                <span class="hljs-comment">' 设置新的查找范围</span><br>                searchRng.Start = searchRng.<span class="hljs-keyword">End</span><br>                searchRng.<span class="hljs-keyword">End</span> = doc.Content.<span class="hljs-keyword">End</span><br>            <span class="hljs-keyword">Loop</span><br>        <span class="hljs-keyword">End</span> <span class="hljs-keyword">With</span><br>        <br>        <span class="hljs-comment">' 更新文档中的所有域</span><br>        doc.Fields.Update<br>    <span class="hljs-keyword">End</span> <span class="hljs-keyword">If</span><br>    <br>    <span class="hljs-comment">' 提示完成</span><br>    MsgBox <span class="hljs-string">"处理完成！"</span> &amp; vbCrLf &amp; _<br>           <span class="hljs-string">"找到 "</span> &amp; figCount &amp; <span class="hljs-string">" 个图表标题并创建了题注。"</span> &amp; vbCrLf &amp; _<br>           <span class="hljs-string">"替换了 "</span> &amp; refCount &amp; <span class="hljs-string">" 个文本引用为交叉引用。"</span>, vbInformation<br><span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">BEGIN 创建图表交叉引用系统<br><br>    // 初始化阶段<br>    SET 文档对象 = 当前活动文档<br>    CREATE 映射字典 用于存储图表编号与新编号对应关系<br>    SET 图表计数器 = 0, 引用计数器 = 0<br>    TRY 添加"图"标签到文档题注标签列表 CATCH 忽略重复错误<br><br>    // 第一阶段：查找图题并创建题注<br>    SET 图题查找模式 = "图[数字]-[数字] [任意文本]"<br>    SET 查找范围 = 整个文档<br>    配置查找参数(启用通配符, 向前查找, 忽略大小写)<br>    <br>    WHILE 找到匹配的图题 DO<br>        INCREMENT 图表计数器<br>        EXTRACT 图题文本<br>        SPLIT 图题 INTO 图号部分, 描述部分<br>        <br>        IF 图号 NOT IN 映射字典 THEN<br>            ADD 图号 -&gt; 图表计数器 TO 映射字典<br>        END IF<br>        <br>        SAVE 原始格式信息(位置, 文本, 字体格式, 段落格式)<br>        CLEAR 当前位置文本<br>        INSERT Word标准题注(使用"图"标签)<br>        RESTORE 原始格式到新题注<br>        LOCATE 题注字段末尾位置<br>        APPEND 空格 + 描述文本<br>        UPDATE 查找范围到下一位置<br>    END WHILE<br>    <br>    UPDATE 文档中所有字段<br><br>    // 第二阶段：查找文本引用并替换为交叉引用<br>    IF 图表计数器 &gt; 0 THEN<br>        SET 引用查找模式 = "图[数字]-[数字]所示"<br>        RESET 查找范围 = 整个文档<br>        配置查找参数(启用通配符, 向前查找, 忽略大小写)<br>        <br>        WHILE 找到匹配的引用 DO<br>            EXTRACT 引用文本<br>            PARSE 图号 FROM 引用文本<br>            ADD "图"前缀构成完整图号<br>            <br>            IF 图号 EXISTS IN 映射字典 THEN<br>                INCREMENT 引用计数器<br>                GET 对应题注编号 FROM 映射字典<br>                SAVE 当前位置<br>                REPLACE 引用文本 WITH "所示"<br>                MOVE 光标到替换位置开始<br>                INSERT Word交叉引用(类型="图", 种类=仅标签和编号, 项目=题注编号, 超链接=是)<br>            END IF<br>            <br>            UPDATE 查找范围到下一位置<br>        END WHILE<br>        <br>        UPDATE 文档中所有字段<br>    END IF<br><br>    // 完成阶段<br>    DISPLAY "处理完成！找到" + 图表计数器 + "个图表标题并创建了题注。替换了" + 引用计数器 + "个文本引用为交叉引用。"<br><br>END 创建图表交叉引用系统<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li>打开包含需要处理的文档</li>
+<li>按Alt+F11打开VBA编辑器</li>
+<li>在VBA编辑器中插入新模块（Insert &gt; Module）</li>
+<li>将提供的代码复制到模块中</li>
+<li>运行宏（按F5或在Word中通过”开发工具” &gt; “宏” &gt; “创建图表交叉引用系统” &gt; “运行”）</li>
+<li>等待处理完成，将显示处理结果的消息框</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><strong>执行前备份</strong>：运行宏前强烈建议先备份文档</li>
+<li><strong>编号映射</strong>：脚本会保持原有的章节-序号格式，但会按照Word的题注系统重新编号</li>
+<li><strong>样式保留</strong>：宏不会更改图题的字体或段落样式</li>
+<li><strong>大文档处理</strong>：对于大型文档，处理可能需要一些时间</li>
+</ol>
+<h2 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h2><p>执行宏后：</p>
+<ul>
+<li>所有”图x-x 描述”格式的文本将被替换为Word自动题注系统</li>
+<li>所有”图x-x所示”格式的文本引用将被替换为交叉引用</li>
+<li>程序完成后会显示处理结果统计（找到的图表数量和替换的引用数量）</li>
+</ul>
+<h2 id="代码维护"><a href="#代码维护" class="headerlink" title="代码维护"></a>代码维护</h2><p>如需修改代码以适应特定需求，可考虑以下几点：</p>
+<ul>
+<li><code>figPattern</code>变量定义了图题的查找模式</li>
+<li><code>refPattern</code>变量定义了引用的查找模式</li>
+<li>可通过修改这些变量来适应不同的命名约定</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-03-01</span>
+            
+                <span>该篇文章被 chenhui-su</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/Word/'>
+                            Word
+                        </a>
+                    
+                        <a href='/tags/VBA/'>
+                            VBA
+                        </a>
+                    
+                        <a href='/tags/%E6%8E%92%E7%89%88/'>
+                            排版
+                        </a>
+                    
+                </span>
+             
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2025/03/23/QQ%20NT%20%E5%85%A8%E6%96%B0%E9%87%8D%E6%9E%84%E8%83%8C%E5%90%8E%E7%9A%84%E6%80%9D%E8%80%83_%E7%A7%91%E5%AD%A6%E4%B8%AD%E5%9B%BD/'>QQ NT 全新重构背后的思考_科学中国</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/02/28/Github-%E5%AD%A6%E7%94%9F%E8%AE%A4%E8%AF%81/">Github 学生认证</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2025 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

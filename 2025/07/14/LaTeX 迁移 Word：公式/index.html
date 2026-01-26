@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="LaTeX 迁移 Word：公式" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.ico">
+    <title>chenhui-su&#39;s Blog | chenhui-su的个人博客</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.ico" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">chenhui-su&#39;s Blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    LaTeX 迁移 Word：公式
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-07-14</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：4分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h2 id="Word-中批量替换-TeX-公式分隔符"><a href="#Word-中批量替换-TeX-公式分隔符" class="headerlink" title="Word 中批量替换 TeX 公式分隔符"></a><strong>Word 中批量替换 TeX 公式分隔符</strong></h2><h3 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a><strong>背景问题</strong></h3><p>在 Microsoft Word 中，需要将所有使用 <code>$$...$$</code> 作为分隔符的行间TeX公式，批量替换为使用 <code>\[...\]</code> 的标准格式，以便 MathType 正常工作，将其转换为行间公式而非行内（内联）公式。标准的“查找与替换”功能在执行此任务时，可能会因Word自身的Bug而失败。</p>
+<p>本文档提供一种经过验证的解决方案：一种是绕过Bug的GUI操作方法。另外提供更稳定高效但尚未经验证的 VBA 宏方法。</p>
+<h3 id="方法一：分步通配符替换法-GUI操作"><a href="#方法一：分步通配符替换法-GUI操作" class="headerlink" title="方法一：分步通配符替换法 (GUI操作)"></a><strong>方法一：分步通配符替换法 (GUI操作)</strong></h3><p>此方法通过将一个复杂的替换操作分解为三个简单的步骤，巧妙地规避了Word的内部Bug，无需使用宏即可完成任务。该方法经本人和多个 AI 交流，并在 Word 2019 中测试迭代得到。</p>
+<h4 id="核心原理：规避Word-Bug"><a href="#核心原理：规避Word-Bug" class="headerlink" title="核心原理：规避Word Bug"></a><strong>核心原理：规避Word Bug</strong></h4><p>此方法的根本原因在于，Word的“查找和替换”功能在使用通配符时存在一个Bug：当“替换为”框中同时包含**反向引用代码（如 <code>\1</code>）<strong>和</strong>特殊字符（如 <code>[</code> 或 <code>]</code>）**时，替换引擎会发生冲突并导致操作失败。</p>
+<p>本方法通过使用临时的、不含特殊字符的文本占位符来完成替换，然后再将占位符替换为最终的目标字符，从而绕开此Bug。</p>
+<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a><strong>操作步骤</strong></h4><p><strong>第1步：使用通配符和临时标记替换公式</strong></p>
+<ol>
+<li><p>按下 <code>Ctrl + H</code> 打开“查找和替换”对话框。</p>
+</li>
+<li><p>点击 <strong>“更多 &gt;&gt;”</strong> 并勾选 <strong>“使用通配符 (Use wildcards)”</strong>。</p>
+</li>
+<li><p>填写以下内容：</p>
+<ul>
+<li><p><strong>查找内容 (Find what):</strong> <code>$$(\*)$$</code></p>
+</li>
+<li><p>替换为 (Replace with): TEMP_OPEN\1TEMP_CLOSE</p>
+<p>(注：TEMP_OPEN 和 TEMP_CLOSE 是自定义的临时标记，可替换为任何您文档中不存在的独特字符串)</p>
+</li>
+</ul>
+</li>
+<li><p>点击 <strong>“全部替换 (Replace All)”</strong>。</p>
+</li>
+</ol>
+<p><strong>第2步：替换“开始标记”</strong></p>
+<ol>
+<li><strong>取消勾选</strong> “使用通配符 (Use wildcards)”。</li>
+<li>填写以下内容：<ul>
+<li><strong>查找内容 (Find what):</strong> <code>TEMP_OPEN</code></li>
+<li><strong>替换为 (Replace with):</strong> <code>\[ </code>  <em>(注意<code>[</code>后<strong>可以</strong>有空格)</em></li>
+</ul>
+</li>
+<li>点击 <strong>“全部替换 (Replace All)”</strong>。</li>
+</ol>
+<p><strong>第3步：替换“结束标记”</strong></p>
+<ol>
+<li>继续保持“使用通配符”为<strong>未勾选</strong>状态。</li>
+<li>填写以下内容：<ul>
+<li><strong>查找内容 (Find what):</strong> <code>TEMP_CLOSE</code></li>
+<li><strong>替换为 (Replace with):</strong> <code> \]</code>  <em>(注意<code>]</code>前<strong>可以</strong>有空格)</em></li>
+</ul>
+</li>
+<li>点击 <strong>“全部替换 (Replace All)”</strong>。</li>
+</ol>
+<p>至此，全部替换操作完成。</p>
+<h3 id="方法二：使用VBA宏一键替换"><a href="#方法二：使用VBA宏一键替换" class="headerlink" title="方法二：使用VBA宏一键替换"></a><strong>方法二：使用VBA宏一键替换</strong></h3><p>此方法通过在 Word 中运行一段 VBA(Visual Basic for Applications) 代码，实现一键式的替换。它能完全绕过 GUI 界面的 Bug<del>，甚至可以处理 GUI 方法无法解决的跨段落公式问题【Gemini 的幻觉，验证发现实际可以处理跨段落内容】</del>。</p>
+<h4 id="VBA-代码"><a href="#VBA-代码" class="headerlink" title="VBA 代码"></a><strong>VBA 代码</strong></h4><figure class="highlight plaintext"><figcaption><span>basic</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs visual">Sub ReplaceTeXDisplayMathDelimiters()<br>    ' 功能：将文档中所有的 $$...$$ TeX行间公式分隔符替换为 \[...\]<br>    ' 版本：1.0<br>    ' 优点：可靠，可跨段落，一键完成<br>    <br>    ' 关闭屏幕更新以提高速度<br>    Application.ScreenUpdating = False<br>    <br>    Dim searchRange As Range<br>    Set searchRange = ActiveDocument.Content<br>    <br>    ' 清理查找和替换的格式设置<br>    searchRange.Find.ClearFormatting<br>    searchRange.Find.Replacement.ClearFormatting<br>    <br>    With searchRange.Find<br>        .Text = "$$*$$" ' 注意：在VBA中查找模式略有不同<br>        .Replacement.Text = ""<br>        .Forward = True<br>        .Wrap = wdFindStop ' 在文档末尾停止<br>        .Format = False<br>        .MatchCase = False<br>        .MatchWholeWord = False<br>        .MatchWildcards = True ' 启用通配符<br>        .MatchSoundsLike = False<br>        .MatchAllWordForms = False<br>        <br>        Dim replacementText As String<br>        <br>        ' 循环执行查找<br>        Do While .Execute<br>            ' .Execute成功后，匹配到的内容就在 searchRange 对象中<br>            <br>            ' 提取公式内容（去掉前后的$$）<br>            Dim content As String<br>            content = Mid(searchRange.Text, 3, Len(searchRange.Text) - 4)<br>            <br>            ' 构建新的替换文本<br>            replacementText = "\[ " &amp; content &amp; " \]"<br>            <br>            ' 用新文本替换掉原来的匹配范围<br>            searchRange.Text = replacementText<br>            <br>            ' 将搜索范围折叠到替换后的末尾，以继续向后查找<br>            searchRange.Collapse wdCollapseEnd<br>        Loop<br>    End With<br>    <br>    ' 恢复屏幕更新<br>    Application.ScreenUpdating = True<br>    <br>    ' 给出完成提示<br>    MsgBox "全部分隔符替换完成。", vbInformation<br><br>End Sub<br></code></pre></td></tr></table></figure>
+
+<h4 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a><strong>使用说明</strong></h4><ol>
+<li>在Word中，按下键盘快捷键 <code>Alt + F11</code> 打开VBA编辑器。</li>
+<li>在左侧的工程项目浏览器中，找到您的文档名（通常是 <code>Project (YourDocumentName)</code>)。</li>
+<li>右键点击您的文档名，选择 <strong>插入 (Insert)</strong> -&gt; <strong>模块 (Module)</strong>。</li>
+<li>将上面的VBA代码 <strong>完整复制</strong> 并粘贴到右侧新出现的空白代码窗口中。</li>
+<li>点击工具栏中的 <strong>绿色三角“运行”按钮</strong> (或按 <code>F5</code> 键) 来执行宏。</li>
+<li>脚本运行后会弹出一个提示框告知操作完成。</li>
+<li>未来若要再次运行此宏，只需打开任意Word文档，按下 <code>Alt + F8</code>，在列表中选择 <code>ReplaceTeXDisplayMathDelimiters</code> 并点击“运行”即可。</li>
+</ol>
+<h4 id="重要风险与安全提示"><a href="#重要风险与安全提示" class="headerlink" title="重要风险与安全提示"></a><strong>重要风险与安全提示</strong></h4><ul>
+<li><strong>备份先行</strong>：在运行任何宏之前，建议<strong>首先备份原始文档</strong>。宏操作会直接修改文档内容，且可能无法通过“撤销”(Ctrl+Z)来回退。</li>
+<li><strong>未经测试</strong>：尽管此代码是为解决该特定问题而编写的，但仅为 AI 生成内容，尚未进行测试。</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-07-14</span>
+            
+                <span>该篇文章被 chenhui-su</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/LaTeX/'>
+                            LaTeX
+                        </a>
+                    
+                        <a href='/tags/Word/'>
+                            Word
+                        </a>
+                    
+                        <a href='/tags/MathType/'>
+                            MathType
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E5%AD%98%E6%A1%A3/'>
+                            存档
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2025/07/24/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5%EF%BC%88Residual%20Connection%EF%BC%89%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/'>残差连接（Residual Connection）核心概念解析</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/07/13/Git%20%E5%9C%A8%20Windows%20%E4%B8%8A%E5%A4%A7%E5%B0%8F%E5%86%99%E4%B8%8D%E6%95%8F%E6%84%9F/">Git 在 Windows 上大小写不敏感</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2025 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

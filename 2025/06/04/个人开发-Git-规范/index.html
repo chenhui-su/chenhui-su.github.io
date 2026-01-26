@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="个人开发 Git 规范" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.ico">
+    <title>chenhui-su&#39;s Blog | chenhui-su的个人博客</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+    
+    
+        <style>
+            .index-main{
+                max-width:  880px;
+            }
+        </style>
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    <style>
+        :root {
+            --waline-theme-color: #9e5345; 
+            --waline-color: #9e5345; 
+            --waline-border-color: #9e5345; 
+            --waline-white: #9e5345; 
+            --waline-bgcolor-light: #efeae2;  
+        }
+        body {
+            color: #9e5345;
+            background: #e8e0c9;
+        }
+        .post-md code {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e8e0c9;
+            color: #2e5041; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #9e5345;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #9e5345;
+        }
+        .year-font-color {
+            color: #9e5345 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #9e5345; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #9e5345;
+            color: #9e5345; 
+        }
+        .wl-btn {
+            border: 1px solid #9e5345; 
+            color:  #9e5345;  
+        }
+        .wl-btn.primary {
+            color: #efeae2; 
+        }
+        .wl-header label {
+            color: #9e5345;
+        }
+        a {
+            color: #2e5041;
+        }
+
+        .post-md a {
+            color: #2e5041;
+        }
+
+        .nav li a {
+            color: #2e5041;
+        }
+
+        .archive-main a:link {
+            color: #2e5041;
+        }
+        .archive-main a:visited {
+            color: #9c9caf; 
+        }
+
+        .archive li span {
+            color: #9e5345;
+        }
+
+        .post-main-title {
+            color: #9e5345;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #9e5345;
+        }
+
+        [data-waline] p {
+            color: #9e5345;
+        }
+        [data-waline] a {
+            color: #9e5345;
+        } 
+        .wl-sort li.active {
+            color: #9e5345;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #efeae2;
+        }
+
+        .paper {
+            background: #e8e0c9;
+        }
+
+        .index-main {
+            background: #efeae2;
+        }
+
+        .paper-main {
+            background: #efeae2;
+        }
+
+        .wl-panel {
+            background: #efeae2;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #efeae2;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(odd) td {
+            background: #efeae2;
+        }
+
+        .post-md table tr:nth-child(even) td {
+            background: #efeae2;
+        }
+
+    
+        .progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #9e5345; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #9e5345; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
+	        background-image: linear-gradient(298deg, #2e5041, #2e5041); /* 鼠标滑过的箭头颜色 */
+         }
+
+         .left-toc-container::-webkit-scrollbar-thumb {
+            background-color: #9e5345; /* 设置滚动条拖动块的颜色 */
+        }
+
+        .bs-docs-sidebar .nav>.active>a,
+        .bs-docs-sidebar .nav>li>a:hover,
+        .bs-docs-sidebar .nav>li>a:focus {
+            color: #2e5041;
+            border-left-color: #2e5041;
+        }
+        .bs-docs-sidebar .nav>li>a {
+            color:  #9e5345;
+        }
+    </style>
+
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e8e0c9  ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.ico" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">chenhui-su&#39;s Blog</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    个人开发 Git 规范
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-06-04</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.8k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：6分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+        <div class=".article-gallery"><h1 id="个人开发-Git-规范"><a href="#个人开发-Git-规范" class="headerlink" title="个人开发 Git 规范"></a>个人开发 Git 规范</h1><p>对于代码新手来说，尽早建立良好的 Git 使用规范非常重要，即使是个人项目，规范的操作也能让你在回顾代码、排查问题时事半功倍。</p>
+<p>本规范参考了网络上一些主流的团队开发规范（如 Conventional Commits, Angular Commit Message Guidelines），并针对个人开发的特点进行了简化和调整。</p>
+<h2 id="一、核心原则-🎯"><a href="#一、核心原则-🎯" class="headerlink" title="一、核心原则 🎯"></a>一、核心原则 🎯</h2><ol>
+<li><strong>原子性提交 (Atomic Commits)</strong>：每次提交应该只包含一个逻辑单元的更改。例如，修复一个 bug、实现一个小功能、或者优化一小段代码。避免一次提交包含多个不相关的改动。</li>
+<li><strong>提交前测试 (Test Before Commit)</strong>：在提交代码前，确保你的代码至少可以正常运行，如果写了单元测试，确保测试通过。</li>
+<li><strong>清晰的提交信息 (Clear Commit Messages)</strong>：这是规范的核心，下面会详细说明。</li>
+<li><strong>及时提交 (Commit Frequently)</strong>：不要等到写完一大堆代码再提交，分解成小步骤，完成一个小功能或修复一个小问题就提交一次。</li>
+<li><strong>分支策略简化 (Simplified Branching)</strong>：个人开发时，可以简化分支模型。</li>
+</ol>
+<h2 id="二、分支管理-🌿"><a href="#二、分支管理-🌿" class="headerlink" title="二、分支管理 🌿"></a>二、分支管理 🌿</h2><p>对于个人开发，可以采用以下简单的分支策略：</p>
+<ul>
+<li><strong><code>main</code> (或 <code>master</code>) 分支</strong>：这是你的主分支，存放稳定、可随时部署或发布的版本。<strong>不要直接在 <code>main</code> 分支上进行日常开发。</strong></li>
+<li><strong><code>develop</code> (或 <code>dev</code>) 分支</strong>：这是你的主要开发分支，所有新功能的开发和 bug 修复都应该在这个分支上进行。</li>
+<li><strong>特性分支 (Feature Branches)</strong>：当你需要开发一个新功能或者进行较大的改动时，从 <code>develop</code> 分支创建一个新的特性分支。分支名可以这样命名：<ul>
+<li><code>feat/xxx</code> (例如: <code>feat/user-login</code>, <code>feat/add-shopping-cart</code>)</li>
+<li><code>fix/xxx</code> (例如: <code>fix/login-bug</code>, <code>fix/payment-issue</code>)</li>
+<li><code>refactor/xxx</code> (例如: <code>refactor/user-module</code>)</li>
+<li><code>docs/xxx</code> (例如: <code>docs/update-readme</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>开发流程示例：</strong></p>
+<ol>
+<li>确保 <code>develop</code> 分支是最新代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout develop<br>git pull origin develop<br></code></pre></td></tr></table></figure></li>
+<li>创建一个新的特性分支开始工作：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout -b feat/new-cool-feature develop<br></code></pre></td></tr></table></figure></li>
+<li>在 <code>feat/new-cool-feature</code> 分支上进行编码和提交。</li>
+<li>当功能开发完成并通过测试后，切换回 <code>develop</code> 分支：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout develop<br></code></pre></td></tr></table></figure></li>
+<li>将特性分支合并到 <code>develop</code> 分支：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git merge --no-ff feat/new-cool-feature<br></code></pre></td></tr></table></figure>
+<em>(<code>--no-ff</code> 的意思是 “no fast-forward”，这样可以保留特性分支的提交历史，使得分支图更清晰。)</em></li>
+<li>删除特性分支（可选，但推荐）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -d feat/new-cool-feature<br></code></pre></td></tr></table></figure></li>
+<li>当 <code>develop</code> 分支上的功能积累到一定程度，并且测试稳定后，可以将其合并到 <code>main</code> 分支，并打上版本标签。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout main<br>git pull origin main<br>git merge develop<br>git push origin main<br>git tag -a v0.1.0 -m <span class="hljs-string">"Version 0.1.0 Release"</span> <span class="hljs-comment"># 创建一个带附注的标签</span><br>git push origin v0.1.0 <span class="hljs-comment"># 推送标签</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="三、Commit-Message-规范-✍️"><a href="#三、Commit-Message-规范-✍️" class="headerlink" title="三、Commit Message 规范 ✍️"></a>三、Commit Message 规范 ✍️</h2><p>这是帮助你追溯代码的关键！一个好的 Commit Message 应该清晰地说明 <strong>做了什么</strong> 以及 <strong>为什么这么做</strong>。我们推荐类似 <a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/">Conventional Commits</a> 的规范，但可以简化。</p>
+<p><strong>Commit Message 结构:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&amp;lt;type&gt;(&amp;lt;scope&gt;): &amp;lt;subject&gt;<br><br>&amp;lt;BLANK LINE&gt;<br><br>&amp;lt;body&gt;<br><br>&amp;lt;BLANK LINE&gt;<br><br>&amp;lt;footer&gt;<br><br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>&lt;type&gt;</code> (必需)</strong>：说明提交的类别。常用的有：<ul>
+<li><code>feat</code>: 新功能 (feature)</li>
+<li><code>fix</code>: 修补 bug</li>
+<li><code>docs</code>: 文档 (documentation)</li>
+<li><code>style</code>: 格式 (不影响代码运行的变动，例如空格、格式化、缺少分号等)</li>
+<li><code>refactor</code>: 重构 (既不是新增功能，也不是修改 bug 的代码变动)</li>
+<li><code>test</code>: 增加测试或者修改现有测试</li>
+<li><code>chore</code>: 构建过程或辅助工具的变动 (例如修改 <code>.gitignore</code>, <code>package.json</code> 等)</li>
+<li><code>perf</code>: 提升性能的代码更改</li>
+<li><code>ci</code>: 对 CI 配置文件和脚本的更改 (例如 Github Actions, Travis 等)</li>
+<li><code>revert</code>: 撤销之前的提交</li>
+</ul>
+</li>
+<li><strong><code>&lt;scope&gt;</code> (可选)</strong>：说明 commit 影响的范围，例如数据层、控制层、视图层、或者某个具体模块。对于个人项目，如果觉得麻烦可以省略。<ul>
+<li>例如: <code>feat(user): add login endpoint</code></li>
+<li>例如: <code>fix(payment): correct calculation error</code></li>
+</ul>
+</li>
+<li><strong><code>&lt;subject&gt;</code> (必需)</strong>：commit 的简短描述，不超过 50 个字符。<ul>
+<li>使用动词开头，第一人称现在时，例如 <code>add</code>, <code>fix</code>, <code>update</code>, <code>remove</code>，而不是 <code>added</code>, <code>fixed</code>。</li>
+<li>首字母小写（除非是专有名词）。</li>
+<li>结尾不加句号。</li>
+</ul>
+</li>
+<li><strong><code>&lt;BLANK LINE&gt;</code></strong>：主体内容前必须有一个空行。</li>
+<li><strong><code>&lt;body&gt;</code> (可选)</strong>：对本次 commit 的详细描述。可以分成多行。解释为什么进行这次修改，以及它如何影响代码。</li>
+<li><strong><code>&lt;footer&gt;</code> (可选)</strong>：<ul>
+<li><strong>BREAKING CHANGE</strong>: 如果当前代码与上一个版本不兼容，则 Footer 部分以 <code>BREAKING CHANGE:</code> 开头，后面是对变动的描述、以及变动理由和迁移方法。</li>
+<li><strong>关联 Issue</strong>: 如果你的提交与某个 Issue 相关联（例如你在 GitHub 上管理任务），可以在这里关闭 Issue。例如 <code>Closes #123</code>, <code>Fixes #456</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>Commit Message 示例：</strong></p>
+<p>一个简单的 commit:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>feat: add user registration functionality<br><br></code></pre></td></tr></table></figure>
+<p>包含 scope:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>feat(auth): implement JWT-based authentication<br><br></code></pre></td></tr></table></figure>
+<p>包含 body:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>fix: correct incorrect tax calculation<br><br>The previous calculation was not rounding correctly for amounts<br><br>under $10, leading to minor discrepancies in final totals.<br><br>This commit updates the rounding logic to ensure accuracy.<br><br></code></pre></td></tr></table></figure>
+<p>包含 breaking change 和关闭 issue:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>feat: update user API to v2<br><br>BREAKING CHANGE: The user API endpoint /api/user has been<br><br>renamed to /api/v2/user to accommodate new features and<br><br>improve consistency. All client applications need to update<br><br>their API calls.<br><br>Closes #42<br><br></code></pre></td></tr></table></figure>
+<p><strong>为什么要这样写？</strong></p>
+<ul>
+<li><strong>可读性强</strong>：一眼就能看出每次提交的目的。</li>
+<li><strong>易于追溯</strong>：方便查找特定功能的修改历史或 bug 的修复过程。</li>
+<li><strong>自动化工具友好</strong>：很多工具可以根据这种格式的 commit message 自动生成 CHANGELOG，或者进行版本管理。</li>
+</ul>
+<h2 id="四、其他建议-✨"><a href="#四、其他建议-✨" class="headerlink" title="四、其他建议 ✨"></a>四、其他建议 ✨</h2><ul>
+<li><strong>使用 <code>.gitignore</code> 文件</strong>：忽略不需要版本控制的文件，如编译产物、日志文件、IDE 配置文件等。GitHub 提供了一些常用语言和框架的 <code>.gitignore</code> 模板。</li>
+<li><strong>经常 <code>git pull</code></strong>：如果你在多个地方开发同一个项目（例如公司电脑和家里电脑），或者未来可能与他人协作，养成在开始工作前 <code>git pull</code> 的习惯，以获取最新代码，避免冲突。</li>
+<li><strong>谨慎使用 <code>git push --force</code></strong>：这个命令会覆盖远程仓库的历史，除非你非常清楚自己在做什么，否则尽量避免使用。尤其是在与他人协作时，这通常是被禁止的。</li>
+<li><strong>学习使用 <code>git rebase -i</code> (交互式变基)</strong>：当你本地有一系列零散的提交时，可以使用交互式变基来清理提交历史，例如合并多个小的提交，修改 commit message 等。这能让你的提交历史更整洁。但在推送到共享分支后，不建议对已推送的提交进行变基。</li>
+<li><strong>配置 Git 用户名和邮箱</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">"Your Name"</span><br>git config --global user.email <span class="hljs-string">"your.email@example.com"</span><br></code></pre></td></tr></table></figure></li>
+<li><strong>善用 <code>git status</code>, <code>git diff</code>, <code>git log</code></strong>：这三个命令是你了解仓库状态、查看修改内容、回顾提交历史的好帮手。</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-06-04</span>
+            
+                <span>该篇文章被 chenhui-su</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/Git/'>
+                            Git
+                        </a>
+                    
+                        <a href='/tags/%E8%A7%84%E8%8C%83/'>
+                            规范
+                        </a>
+                    
+                        <a href='/tags/VC/'>
+                            VC
+                        </a>
+                    
+                        <a href='/tags/%E5%BC%80%E5%8F%91/'>
+                            开发
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E8%A7%84%E8%8C%83/'>
+                            规范
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2025/06/07/%E6%96%87%E4%BB%B6%E4%B8%8EURL%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%EF%BC%9A%E5%88%86%E9%9A%94%E7%AC%A6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/'>文件与URL命名规范：分隔符使用指南</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/05/22/%E4%B8%80%E4%BB%BD%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BApowerpoint%E5%A4%87%E6%B3%A8%E4%B8%BAword%E7%9A%84VBA%E4%BB%A3%E7%A0%81/">一份批量导出powerpoint备注为word的VBA代码</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2025 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>
