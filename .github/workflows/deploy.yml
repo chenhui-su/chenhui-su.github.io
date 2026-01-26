@@ -1,0 +1,44 @@
+name: Deploy Static Content to Pages
+
+on:
+  # 监听 main 分支的 push 事件
+  push:
+    branches: ["main"]
+
+  # 允许你在 Actions 页面手动点击按钮触发部署
+  workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 这是一个并发控制，防止多次 push 导致部署冲突
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 单次部署任务
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        # 上传当前目录下的所有文件（因为你的 main 就是静态文件）
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
