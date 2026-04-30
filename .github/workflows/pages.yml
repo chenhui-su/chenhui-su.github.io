@@ -34,7 +34,14 @@ jobs:
           fi
 
       - name: Verify generated homepage
-        run: test -s public/index.html
+        run: |
+          ls -la public || true
+          if [ -f public/index.html ]; then
+            wc -c public/index.html
+          else
+            echo "public/index.html is missing"
+          fi
+          test -s public/index.html
 
       - name: Deploy to gh-pages branch
         run: |
