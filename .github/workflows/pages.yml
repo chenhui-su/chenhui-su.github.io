@@ -26,7 +26,12 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npx hexo generate
+        run: |
+          npx hexo generate
+          ls -la public
+          if [ -f public/index.html ]; then
+            wc -c public/index.html
+          fi
 
       - name: Verify generated homepage
         run: test -s public/index.html
