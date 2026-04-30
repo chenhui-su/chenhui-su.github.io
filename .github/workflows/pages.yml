@@ -25,15 +25,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Ensure A4 required pages exist
-        run: |
-          if [ ! -f source/index/index.md ]; then
-            npx hexo new page index
-          fi
-          if [ ! -f source/list/index.md ]; then
-            npx hexo new page list
-          fi
-
       - name: Build
         run: |
           npx hexo generate
