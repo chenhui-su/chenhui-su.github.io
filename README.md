@@ -11,7 +11,6 @@
 | 分支 | 用途 | 说明 |
 |---|---|---|
 | `main` | 源码分支 | 包含 Hexo 配置、主题设置、博客源文件（Markdown）、CI/CD 工作流 |
-| `gh-pages` | 部署分支 | 由 GitHub Actions 自动生成，包含 `hexo generate` 产出的静态文件，**不要手动编辑** |
 
 ### 部署流程
 
@@ -20,8 +19,8 @@ push to main
   → GitHub Actions 触发
     → 安装依赖 (npm ci)
       → 构建静态文件 (hexo generate)
-        → 推送到 gh-pages 分支
-          → GitHub Pages 从 gh-pages 分支提供访问
+        → 上传 Pages Artifact
+          → GitHub Pages 直接提供访问
 ```
 
 CI/CD 工作流配置位于 `.github/workflows/pages.yml`。
