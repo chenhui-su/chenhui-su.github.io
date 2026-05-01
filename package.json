@@ -28,6 +28,6 @@
     "highlight.js": "^11.11.1"
   },
   "devDependencies": {
-    "wrangler": "^4.86.0"
+    "wrangler": "^4.87.0"
   }
 }
