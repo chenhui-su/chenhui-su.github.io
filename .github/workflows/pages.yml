@@ -52,15 +52,14 @@ jobs:
           git fetch origin gh-pages
           git worktree add -B gh-pages gh-pages-deploy origin/gh-pages
           rsync -a --delete public/ gh-pages-deploy/
-          cd gh-pages-deploy
-          touch .nojekyll
-          git add -A
-          if git diff --cached --quiet; then
+          touch gh-pages-deploy/.nojekyll
+          git -C gh-pages-deploy add -A
+          if git -C gh-pages-deploy diff --cached --quiet; then
             echo "No deployment changes to commit"
             exit 0
           fi
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git commit -m "deploy: ${GITHUB_SHA}"
-          git push origin gh-pages
+          git -C gh-pages-deploy config user.name github-actions[bot]
+          git -C gh-pages-deploy config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git -C gh-pages-deploy commit -m "deploy: ${GITHUB_SHA}"
+          git -C gh-pages-deploy push origin gh-pages
 
