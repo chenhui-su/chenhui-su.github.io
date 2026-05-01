@@ -4,7 +4,7 @@
 
 This repository is a source-first Hexo blog.
 
-The `main` branch stores the blog's actual working assets: content, site configuration, theme overrides, CI workflows, and project documentation. The `gh-pages` branch is a build artifact branch generated from `main`; it is an output, not an editing surface.
+The `main` branch stores the blog's actual working assets: content, site configuration, theme overrides, CI workflows, and project documentation. Build output is handled by GitHub Actions via Pages artifact upload, with no separate deployment branch.
 
 Any agent operating in this repository should treat it as a content-and-infrastructure project rather than a generic Node.js app. Changes here can affect not only local development, but also site rendering, deployment behavior, URL stability, and the long-term maintainability of the author's writing workflow.
 
@@ -101,21 +101,21 @@ Changes here affect build behavior, URL generation, plugins, and local authoring
 
 ### 3. Theme Layer
 
-This repository uses `hexo-theme-a4` via npm, with local overrides in `_config.a4.yml`.
+This repository uses `hexo-theme-anzhiyu` via npm, with local overrides in `_config.anzhiyu.yml`.
 
-Agents should treat `_config.a4.yml` as the customization boundary. Prefer changing override config rather than editing vendored theme code. If a desired behavior cannot be achieved through configuration, call that out explicitly before proposing a deeper theme change.
+Agents should treat `_config.anzhiyu.yml` as the customization boundary. Prefer changing override config rather than editing vendored theme code. If a desired behavior cannot be achieved through configuration, call that out explicitly before proposing a deeper theme change.
 
 ### 4. Delivery Layer
 
 The delivery path is:
 
-`main` source -> GitHub Actions build -> generated static files -> `gh-pages` branch -> GitHub Pages hosting
+`main` source -> GitHub Actions build -> generated static files -> Pages artifact -> GitHub Pages hosting
 
 That means:
 
 - `main` is the source of truth.
-- `gh-pages` is disposable output.
 - local `public/` is a build artifact, not a canonical repository layer.
+- generated output is uploaded as a Pages artifact, not pushed to a branch.
 
 Agents should avoid reintroducing workflows that publish generated output back into `main`.
 
@@ -135,21 +135,16 @@ This is the only branch that should be manually edited for normal work.
 
 ### `gh-pages`
 
-Holds:
-
-- generated static site output only
-
-This branch should be treated as deployment output. Do not manually reorganize files here unless the user explicitly requests Pages-level debugging.
+This branch no longer exists. All deployment is handled via GitHub Pages artifact upload.
 
 ## Deployment Intent
 
-The intended deployment model is build-on-push from `main`, then publish static output to `gh-pages`.
+The intended deployment model is build-on-push from `main`, with static output uploaded as a Pages artifact and served directly by GitHub Pages.
 
 Agents should preserve the following invariants:
 
 - there is one clear publishing path
 - generated files do not become the editable source of truth
-- GitHub Pages is pointed at the correct deployment branch
 - Jekyll-specific behavior is disabled where necessary for Hexo output
 
 If a deployment issue appears, diagnose it by separating these concerns:
@@ -212,7 +207,7 @@ Agents should preserve an editor experience that supports that model:
 
 Changes may affect canonical URL generation, plugin behavior, or global rendering.
 
-### `_config.a4.yml`
+### `_config.anzhiyu.yml`
 
 Changes may alter navigation, appearance, reading layout, or asset references.
 
