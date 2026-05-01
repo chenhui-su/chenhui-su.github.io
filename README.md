@@ -46,8 +46,9 @@ CI/CD 工作流配置位于 `.github/workflows/pages.yml`。
 │   └── tags/                   # 标签页
 ├── themes/                     # 主题目录（通过 npm 安装，本地为空）
 ├── _config.yml                 # Hexo 站点配置
-├── _config.a4.yml              # A4 主题配置
+├── _config.anzhiyu.yml         # AnZhiYu 主题配置
 ├── package.json                # 依赖与脚本
+├── wrangler.jsonc              # Cloudflare Pages 配置
 └── .gitignore
 ```
 
@@ -55,7 +56,7 @@ CI/CD 工作流配置位于 `.github/workflows/pages.yml`。
 
 ### 环境要求
 
-- [Node.js](https://nodejs.org/) >= 20
+- [Node.js](https://nodejs.org/) >= 24
 - [npm](https://www.npmjs.com/)
 
 ### 安装
@@ -75,6 +76,12 @@ npm run build
 
 # 清除缓存和生成文件
 npm run clean
+
+# 构建并部署到 Cloudflare Pages（需配置 wrangler）
+npm run deploy
+
+# 构建并本地预览 Cloudflare Pages
+npm run preview
 ```
 
 ### 新建文章
@@ -87,16 +94,22 @@ npx hexo new "文章标题"
 
 ## 主题
 
-使用 [hexo-theme-a4](https://github.com/HiNinoJay/hexo-theme-A4) 主题，通过 npm 安装管理。
+使用 [hexo-theme-anzhiyu](https://github.com/anzhiyu-c/hexo-theme-anzhiyu) 主题，通过 npm 安装管理。
 
-主题配置文件为 `_config.a4.yml`，主要特性：
+主题配置文件为 `_config.anzhiyu.yml`，主要特性：
 
-- 深色模式
-- 文章目录（左侧 TOC）
-- 代码高亮 (highlight.js)
-- 数学公式支持 (MathJax)
-- 图片灯箱 (Lightgallery)
-- 阅读量与字数统计
+- 深色模式 / 自动切换
+- 文章目录（TOC）
+- 代码高亮 (highlight.js / PrismJS)
+- 数学公式支持 (MathJax / KaTeX)
+- 图片懒加载 + 模糊渐进
+- 简繁转换
+- PJAX 无刷新导航
+- 图片灯箱 (Fancybox)
+- APlayer 音乐注入
+- AI 文章摘要
+- 访问统计与字数统计
+- 阅读模式
 
 ## 技术栈
 
@@ -104,4 +117,4 @@ npx hexo new "文章标题"
 - **渲染**：EJS / Pug / Stylus / Marked
 - **数学公式**：hexo-filter-mathjax (MathJax)
 - **代码高亮**：highlight.js + PrismJS
-- **部署**：GitHub Actions + GitHub Pages
+- **部署**：GitHub Actions + GitHub Pages / Cloudflare Pages (wrangler)
