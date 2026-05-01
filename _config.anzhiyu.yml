@@ -232,7 +232,7 @@ post_copyright:
   enable: true
   decode: false
   author_href:
-  location: 长沙
+  location: 上海
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
   avatarSinks: false # hover时头像下沉
@@ -298,7 +298,7 @@ noticeOutdate:
 # https://github.com/overtrue/share.js
 sharejs:
   enable: true
-  sites: facebook,twitter,wechat,weibo,qq
+  sites: facebook,twitter,wechat,qq
 
 # AddToAny
 # https://www.addtoany.com/
@@ -1155,7 +1155,7 @@ visitorMail:
 ptool:
   enable: true
   share_mobile: true
-  share_weibo: true
+  share_weibo: false
   share_copyurl: true
   categories: false # 是否显示分类
   mode: # 运营模式与责任，不配置不显示
@@ -1252,7 +1252,7 @@ inject:
 
   bottom:
     # 自定义js
-    # - <script src="/js/xxx"></script>
+    - <script src="/js/post-tools-github.js" defer></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
