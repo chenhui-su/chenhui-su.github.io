@@ -5,6 +5,7 @@ categories:
   - 存档
 tags:
   - QQ
+copyright: false
 ---
 
 > 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [science.china.com.cn](http://science.china.com.cn/2023-08/11/content_42480503.htm)
