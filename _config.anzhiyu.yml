@@ -226,6 +226,7 @@ toc:
   page: false
   number: true
   expand: false
+  depth: 3
   style_simple: false # for post
 
 post_copyright:
