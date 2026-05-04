@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: Conda 虚拟环境注册为 Jupyter 内核
 date: 2025-08-10 22:51:40
 tags:

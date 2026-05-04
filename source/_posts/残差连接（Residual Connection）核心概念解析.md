@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: 残差连接（Residual Connection）核心概念解析
 date: 2025-07-24 14:20:09
 categories:

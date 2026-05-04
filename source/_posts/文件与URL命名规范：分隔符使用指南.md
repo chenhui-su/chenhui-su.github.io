@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: 文件与URL命名规范：分隔符使用指南
 date: 2025-06-07 10:33:04
 categories:

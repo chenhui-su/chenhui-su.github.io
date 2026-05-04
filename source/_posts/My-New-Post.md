@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: My New Post
 date: 2022-09-04 23:28:38
 categories: 

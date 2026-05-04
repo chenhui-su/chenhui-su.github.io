@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: MathType 公式分章编号
 date: 2025-09-03 18:18:09
 categories:

@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: LaTeX Snips
 date: 2022-11-25 13:04:28
 categories: 

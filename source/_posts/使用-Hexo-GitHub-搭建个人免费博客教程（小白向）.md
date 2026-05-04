@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: 使用 Hexo+GitHub 搭建个人免费博客教程（小白向）
 date: 2023-07-30 19:52:08
 categories: 

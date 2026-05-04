@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: Git 在 Windows 上大小写不敏感
 date: 2025-07-13 11:57:03
 tags:

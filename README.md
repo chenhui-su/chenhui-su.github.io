@@ -112,14 +112,9 @@ npx hexo new "文章标题"
 
 ### 文章目录配置
 
-文章目录默认显示到二级标题。如需调整，可在文章 front-matter 中设置：
+文章目录只显示 h1，npm 主题未传递 `max_depth` 参数，导致无法通过 `_config.anzhiyu.yml` 的 `toc.depth` 配置控制。
 
-```yaml
-toc_depth: 2  # 显示到二级标题
-toc_depth: 3  # 显示到三级标题
-```
-
-新文章模板 `scaffolds/post.md` 已预置 `toc_depth: 2`。
+> 此问题暂挂起。解决方案需在 themes/ 目录覆盖主题文件，不优雅。
 
 ## 技术栈
 

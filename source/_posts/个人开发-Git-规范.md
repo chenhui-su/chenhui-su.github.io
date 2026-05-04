@@ -1,5 +1,4 @@
 ---
-toc_depth: 2
 title: 个人开发 Git 规范
 date: 2025-06-04 10:33:02
 categories:
