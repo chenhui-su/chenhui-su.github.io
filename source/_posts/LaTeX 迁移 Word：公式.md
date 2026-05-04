@@ -1,4 +1,5 @@
 ---
+toc_depth: 2
 title: LaTeX 迁移 Word：公式
 date: 2025-09-03 16:42:36
 categories: 

@@ -1,4 +1,5 @@
 ---
+toc_depth: 2
 title: Github Inbox 幽灵未读通知处理
 date: 2025-09-25 10:26:11
 tags:

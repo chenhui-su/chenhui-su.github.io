@@ -110,6 +110,17 @@ npx hexo new "文章标题"
 - 访问统计与字数统计
 - 阅读模式
 
+### 文章目录配置
+
+文章目录默认显示到二级标题。如需调整，可在文章 front-matter 中设置：
+
+```yaml
+toc_depth: 2  # 显示到二级标题
+toc_depth: 3  # 显示到三级标题
+```
+
+新文章模板 `scaffolds/post.md` 已预置 `toc_depth: 2`。
+
 ## 技术栈
 
 - **框架**：Hexo 8.x

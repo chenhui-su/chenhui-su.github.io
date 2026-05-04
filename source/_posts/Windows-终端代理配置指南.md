@@ -1,4 +1,5 @@
 ---
+toc_depth: 2
 title: Windows 终端代理配置指南
 date: 2025-11-11 10:46:45
 tags:

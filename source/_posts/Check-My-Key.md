@@ -1,4 +1,5 @@
 ---
+toc_depth: 2
 title: Check My Key
 date: 2025-02-15 23:39:26
 tags:

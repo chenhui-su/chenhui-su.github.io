@@ -1,4 +1,5 @@
 ---
+toc_depth: 2
 title: Hello World
 date: 2022-09-04 23:20:42
 categories: 
