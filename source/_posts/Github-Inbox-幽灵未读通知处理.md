@@ -1,6 +1,8 @@
 ---
 title: Github Inbox 幽灵未读通知处理
 date: 2025-09-25 10:26:11
+categories:
+  - 存档
 tags:
   - Github
 ---

@@ -1,13 +1,15 @@
 ---
-title: Windows 上 pwsh 安装 Claude Code 的记录及未来可能的使用方案
+title: Windows 上 pwsh 安装 Claude Code 的记录及可能的使用方案
 date: 2026-05-04 10:00:00
 categories:
   - 存档
 tags:
   - Windows
+  - 终端
+  - 命令行
   - PowerShell
   - WSL
-  - Claude
+  - ClaudeCode
 ---
 
 > Anthropic 官方提供了多平台的安装方式（参见 [官方文档](https://code.claude.com/docs/en/overview#get-started)）：
@@ -15,12 +17,11 @@ tags:
 > - PowerShell：`irm https://claude.ai/install.ps1 | iex`
 > - Windows CMD：`curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd`
 > - Windows WinGet：`winget install Anthropic.ClaudeCode`
+> npm 安装方式已经实质废弃，虽然现在其 npm 主页仍在更新，但是已经是二进制套壳（二进制程序本身也是 bun 套壳） https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=readme
 
-> 本文源于一次探索性尝试：在 Windows 的 PowerShell 7 环境下，直接执行了本应仅适用于 Mac、Linux 和 WSL 的 `curl -fsSL https://claude.ai/install.sh | bash` 命令，想验证 PowerShell 是否同样能够处理该安装脚本。
+> 本文源于一次探索性尝试：在 Windows 的 PowerShell 7 环境下，直接执行仅适用于 Mac、Linux 和 WSL 的 `curl -fsSL https://claude.ai/install.sh | bash` 命令，想验证 PowerShell 是否同样能够处理该安装脚本。
 
-> **重要声明：本文第 3 节中提供的"跨系统穿透调用方案"由 AI 生成提供，当前尚未经过实际运行验证，仅作为未来可能的使用方案参考。**
-
-## 一、终端日志全记录
+## 一、终端日志
 
 以下是标准 Windows 宿主机下，尝试通过 PowerShell 7 执行官方安装指令并尝试调用的完整终端输入输出日志。该日志暴露了跨系统调用的典型错误链。
 
@@ -80,17 +81,17 @@ PS D:\> wsl claude
 /bin/bash: line 1: claude: command not found
 ```
 
-## 二、核心现象与逻辑剖析
+## 二、现象分析
 
 根据上述日志，可以将安装与调用过程中的问题拆解为三个层面的机制冲突。
 
-### 2.1 物理落点隔离与"伪成功"陷阱
+### 2.1 物理落点隔离与"伪成功"
 
 日志第一阶段显示安装成功，但在宿主机查询 `Get-Command claude` 失败。
 
 **原因**：PowerShell 7 的管道符 `|` 将原生字节流传递给了 Windows 环境变量中的 `bash.exe`（由 WSL 提供）。安装脚本实际在 Linux 子系统中执行，文件被写入 WSL 的虚拟文件系统（`/home/wsl/.local/bin/claude`）。Windows 物理硬盘中并不存在该执行文件，导致宿主机的系统终端无法识别命令。
 
-### 2.2 符号解析冲突（预处理错位）
+### 2.2 符号解析冲突
 
 执行单行探测指令 `wsl ls ~/.local/bin` 时，返回错误提示 `cannot access 'C:Userssu196/.local/bin'`。
 
@@ -102,15 +103,15 @@ PS D:\> wsl claude
 
 **原因**：`wsl <command>` 触发的是 Linux 的非交互式 Shell（Non-interactive shell）。在此模式下，系统不会预先加载 `.bashrc` 或 `.profile` 文件。由于 `~/.local/bin` 并非系统级全局 `$PATH`，非交互模式下的 WSL 无法定位该可执行文件，从而导致调用失败。
 
-## 三、未来可能的使用方案（未经验证）
+## 三、未来可能的使用方案
 
-由于 Claude Code 的运行依赖 Unix 环境，而实际工程代码通常存储在 Windows 宿主机磁盘中。以下提供一种由 AI 构建的跨系统穿透调用机制。
+针对 Claude Code 安装在 WSL，而面向用户的一体化应用的开发项目主体需要在 Windows 的情况，提供一种由 AI 构建的跨系统穿透调用机制。
 
-**注意：此方案尚未在当前环境中进行充分的实际运行验证。**
+注意：此方案尚未进行实际验证，仅由 Gemini 3.1 Pro 在 2026-05-04 提供。
 
 ### 3.1 构建 PowerShell 代理函数
 
-通过修改 PowerShell 配置文件，利用 `bash -c` 强制包裹执行命令，避免宿主机符号解析污染，同时使用绝对或相对路径直达目标程序。
+修改 PowerShell 配置文件，利用 `bash -c` 强制包裹执行命令，避免宿主机符号解析污染，同时使用绝对或相对路径直达目标程序。
 
 执行以下命令编辑配置文件：
 ```powershell

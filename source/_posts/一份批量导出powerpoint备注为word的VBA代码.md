@@ -1,6 +1,8 @@
 ---
 title: 一份批量导出powerpoint备注为word的VBA代码
 date: 2025-05-22 10:45:58
+categories:
+  - 工具
 tags:
   - PowerPoint
   - VBA

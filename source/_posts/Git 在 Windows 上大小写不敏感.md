@@ -1,6 +1,8 @@
 ---
 title: Git 在 Windows 上大小写不敏感
 date: 2025-07-13 11:57:03
+categories:
+  - 存档
 tags:
   - 博客
   - Git

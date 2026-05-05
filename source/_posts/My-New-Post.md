@@ -2,9 +2,9 @@
 title: My New Post
 date: 2022-09-04 23:28:38
 categories: 
-- 测试
+  - 测试
 tags: 
-- test
+  - test
 ---
 
 I do this to 验证 something.

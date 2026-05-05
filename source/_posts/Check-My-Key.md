@@ -1,6 +1,8 @@
 ---
 title: Check My Key
 date: 2025-02-15 23:39:26
+categories:
+  - 存档
 tags:
   - 博客
   - test

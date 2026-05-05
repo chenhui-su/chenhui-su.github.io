@@ -1,6 +1,8 @@
 ---
 title: Conda 虚拟环境注册为 Jupyter 内核
 date: 2025-08-10 22:51:40
+categories:
+  - 工具
 tags:
   - Python
   - Conda
@@ -9,13 +11,9 @@ tags:
 
 # Conda 虚拟环境注册为 Jupyter 内核
 
-
-
 ## 1. 摘要
 
 本文档阐述了将一个已存在的 Conda 虚拟环境注册为 Jupyter Notebook 或 JupyterLab 内核的标准流程。该操作使得在 Jupyter 环境中可以方便地切换和使用不同虚拟环境的 Python 解释器及其安装的库，从而实现项目间的环境隔离。
-
-
 
 ## 2. 先决条件
 
@@ -25,13 +23,9 @@ tags:
 - **Jupyter 已安装**：系统中已安装 Jupyter Notebook 或 JupyterLab。通常建议在 `base` 环境中安装。
 - **目标虚拟环境已创建**：你希望添加为内核的 Conda 虚拟环境已经通过 `conda create` 命令创建完毕。
 
-
-
 ## 3. 操作步骤
 
 以下步骤将指导你完成环境的内核注册。
-
-
 
 ### 步骤 1：激活目标 Conda 环境
 
@@ -42,8 +36,6 @@ conda activate <your_env_name>
 ```
 
 **说明**：将 `<your_env_name>` 替换为你的虚拟环境的实际名称。后续所有命令都应在该激活的环境下执行。
-
-
 
 ### 步骤 2：在环境中安装 `ipykernel`
 
@@ -61,17 +53,11 @@ pip install ipykernel
 
 **建议**：在 Conda 环境中，优先使用 `conda install` 以保证依赖关系的一致性。
 
-
-
 ### 步骤 3：将环境注册为 Jupyter 内核
-
-
 
 执行以下命令，将当前已激活的环境注册到 Jupyter 的内核列表中。
 
-Bash
-
-```
+```bash
 python -m ipykernel install --user --name "<kernel_name>" --display-name "Python (<display_env_name>)"
 ```
 
@@ -90,11 +76,7 @@ conda activate data_sci
 python -m ipykernel install --user --name "data_sci" --display-name "Python (data_sci)"
 ```
 
-
-
 ## 4. 验证内核
-
-
 
 完成上述步骤后，验证内核是否已成功添加。
 
@@ -114,8 +96,6 @@ python -m ipykernel install --user --name "data_sci" --display-name "Python (dat
    - 在 Jupyter Notebook 中，点击右上角的 "New" 按钮，下拉菜单中应包含新的内核。
    - 对于已有的 notebook 文件，可以通过菜单栏的 "Kernel" -> "Change Kernel" 来切换到新添加的内核。
 
-
-
 ## 5. 内核管理
 
 ### 查看所有已注册的内核
@@ -125,8 +105,6 @@ python -m ipykernel install --user --name "data_sci" --display-name "Python (dat
 ```bash
 jupyter kernelspec list
 ```
-
-
 
 ### 移除已注册的内核
 
