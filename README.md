@@ -112,9 +112,9 @@ npx hexo new "文章标题"
 
 ### 文章目录配置
 
-文章目录只显示 h1，npm 主题未传递 `max_depth` 参数，导致无法通过 `_config.anzhiyu.yml` 的 `toc.depth` 配置控制。
+npm 主题未将 `toc.depth` 传递给 Hexo 的 `toc()` helper，`_config.anzhiyu.yml` 中的 `toc.depth` 配置实际不生效。同时主题默认 `toc.expand: false`，子级目录会被折叠。
 
-> 此问题暂挂起。解决方案需在 themes/ 目录覆盖主题文件，不优雅。
+当前已将 `toc.expand` 设为 `true`，目录可正常展开全部层级。若后续需要精确控制目录深度，可通过本地 helper 覆写 `toc` helper，从 `theme.toc.depth` 读取 `max_depth` 注入调用参数。
 
 ## 待办
 
