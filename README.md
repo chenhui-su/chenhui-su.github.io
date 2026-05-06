@@ -37,6 +37,7 @@ CI/CD 工作流配置位于 `.github/workflows/pages.yml`。
 │   ├── page.md
 │   └── post.md
 ├── source/                     # 博客源文件
+│   ├── drafts/                 # 草稿文档（不参与构建）
 │   ├── _posts/                 # 博客文章 (Markdown)
 │   ├── categories/             # 分类页
 │   ├── img/                    # 图片资源

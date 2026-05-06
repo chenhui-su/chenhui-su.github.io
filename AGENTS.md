@@ -84,6 +84,7 @@ This project should be understood in four layers.
 The content layer lives primarily under `source/`.
 
 - `source/_posts/` contains the published writing in Markdown.
+- `source/drafts/` holds draft documents that are excluded from rendering via `exclude`; files here are plain Markdown without Hexo front-matter.
 - `source/index/`, `source/list/`, `source/tags/`, and `source/categories/` define navigational pages.
 - `source/img/` contains site assets referenced by the theme and content.
 
