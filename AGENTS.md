@@ -164,9 +164,12 @@ At minimum, the following files together should explain the project:
 
 - `README.md`: project-facing overview and usage
 - `AGENTS.md`: operational rules for agents and structural intent
+- `WRITING_GUIDELINES.md`: Chinese documentation and editing style guidance for agents
 - workflow files under `.github/workflows/`: executable deployment policy
 
 When adding documentation, prefer durable guidance over temporary troubleshooting notes.
+
+For documentation editing, especially Chinese prose, agents should read `WRITING_GUIDELINES.md` before making substantive wording changes.
 
 ## Change Design Guidance
 
