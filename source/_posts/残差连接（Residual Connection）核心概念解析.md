@@ -1,5 +1,5 @@
 ---
-title: 残差连接（Residual Connection）核心概念解析
+title: 残差连接核心概念解析
 date: 2025-07-24 14:20:09
 categories:
   - 存档
@@ -8,7 +8,7 @@ tags:
   - 深度学习
 ---
 
-# 残差连接（Residual Connection）核心概念解析
+# 残差连接核心概念解析
 
 本文档旨在系统性地阐述深度学习中的一个关键概念——**残差连接（Residual Connection）**，也被称为**捷径连接（Shortcut Connection）**。它由何恺明等人在其里程碑式的研究ResNet中提出，是现代深度神经网络设计的基石。
 
